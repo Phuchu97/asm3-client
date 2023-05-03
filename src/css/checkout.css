@@ -1,0 +1,156 @@
+.checkout {
+    min-height: 80vh;
+}
+
+.checkout-header {
+    height: 15rem;
+    background-color: #f8f9fa;
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rem;
+}
+
+.checkout-header h1 {
+    font-size: 4rem;
+    letter-spacing: 4px;
+    opacity: 0.8;
+}
+
+.checkout-header p {
+    font-size: 1.8rem;
+    opacity: 0.8;
+}
+
+.checkout-content {
+    margin: 0 6rem;
+    color: black;
+}
+
+.checkout-form {
+    width: 100%;
+}
+
+.checkout-content-left-title {
+    letter-spacing: 1px;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
+.checkout-label-input {
+    display: block;
+    letter-spacing: 1px;
+    font-size: 1.4rem;
+    opacity: 0.9;
+}
+
+.checkout-form {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.checkout-form input {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+    padding: 1.2rem;
+    padding-left: 2rem;
+    opacity: 0.8;
+    outline: none;
+    font-size: 1.6rem;
+}
+
+.checkout-form input:focus {
+    border: 1px solid rgba(161, 57, 144, 0.4);
+    box-shadow: rgba(161, 57, 144, 0.4) 0px 5px 15px;
+}
+
+.checkout-submit {
+    margin: 3rem 0;
+    background-color: black;
+    color: #f8f9fa;
+    font-size: 1.8rem;
+    opacity: 0.8;
+    padding: 1.6rem 2rem;
+    border-radius: 3px;
+    width: 15rem;
+    text-align: center;
+    transition: .2s linear;
+}
+
+.checkout-submit:hover {
+    scale: 1.05;
+    cursor: pointer;
+}
+
+.checkout-content-right {
+    align-self: center;
+}
+
+.checkout-content-right-content {
+    padding: 4rem;
+    background-color: #f8f9fa;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.checkout-content-right-content-title {
+    letter-spacing: 2px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 2rem 0;
+    font-size: 2.5rem;
+}
+
+.order-item {
+    display: flex; 
+    align-items: center;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.order-item h3{
+    font-weight: 600;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.order-item p{
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+.order-total {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.order-total h3{ 
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.order-total p{
+    margin-bottom: 0;
+    align-self: center;
+    font-size: 1.5rem; 
+}
+
+.form-error {
+    color: red;
+    font-size: 1.1rem;
+}
+
+.delete-cart {
+    font-size: 1.5rem;
+    background-color: #edafaf;
+    border-radius: 50%;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 4px;
+    padding-right: 5px;
+    cursor: pointer;
+}

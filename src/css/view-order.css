@@ -1,0 +1,23 @@
+
+.view-order-header {
+    color: black;
+    margin-left: 6rem;
+}
+
+.view-order-header h1{
+    margin: 2rem 0;
+}
+
+.view-order-header p{
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.view-order-img-product{
+    width: 18rem;
+    height: 18rem;
+}
+
+.view-order-table-tbody-tr {
+    line-height: 20rem !important;
+}

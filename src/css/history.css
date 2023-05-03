@@ -1,0 +1,50 @@
+.history-content {
+    margin-top: 6rem;
+}
+
+.history-table {
+    width: 100%;
+}
+
+.history-table thead {
+    background-color: #f8f9fa;
+    font-size: 1.4rem;
+}
+
+.history-table thead>tr {
+    line-height: 6rem;
+}
+
+.history-table tbody>tr {
+    line-height: 3.5rem;
+}
+
+
+.history-table th {
+    text-align: center;
+}
+
+.history-table td {
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.history-move-view {
+    border: solid 1px rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    width: 50%;
+    height: 50%;
+    margin: 0;
+    display: inline-block;
+    cursor: pointer;
+    padding: 0.5rem 0.8rem;
+    transition: .2s linear;
+}
+
+.history-move-view i {
+    margin-left: 0.5rem;
+}
+
+.history-move-view:hover {
+    scale: 1.1;
+}

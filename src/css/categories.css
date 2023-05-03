@@ -1,0 +1,65 @@
+.category {
+    margin: 0;
+}
+
+.categories-title {
+    margin-top: 3rem;
+}
+
+
+.categories-title p, .categories-title h2 {
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-clip: text;
+    background-size: cover;
+    background-image: url('https://content.rolex.com/dam/homepage/cut-out/homepage-datejust-41-m126333-0010-cut-out.jpg');
+}
+
+.categories-title h2 {
+    font-size: 2.5rem;
+}
+
+.categories-title p {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 2rem;
+}
+
+.category {
+    margin: 0 10rem;
+}
+
+.category-item {
+    overflow: hidden;
+    height: 28rem;
+    border-radius: 1.2rem;
+    position: relative;
+}
+
+.category-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s linear;
+}
+
+.category-item:hover img, .category-item:hover div {
+    scale: 1.1;
+    cursor: pointer;
+}
+
+.category-item-title {
+    position: absolute;
+    color: #fff;
+    z-index: 2;
+    font-size: 3rem;
+    bottom: 10%;
+    width: 100%;
+    transition: .4s linear;
+    text-align: center;
+}
+
