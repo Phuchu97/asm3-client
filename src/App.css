@@ -13,3 +13,7 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+.toast-message {
+  font-size: 1.6rem;
+}

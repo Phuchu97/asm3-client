@@ -1,14 +1,18 @@
-import { useNavigate,Link,useParams } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import { useEffect, useState,useContext } from 'react';
 import { getListCart, deleteListCart } from "../Services/CartService";
 import { addOrder } from "../Services/OrderService";
+import { CartContext } from "../Contexts/CartContext";
 import { Numeral } from "react-numeral";
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import '../css/checkout.css'
+import { useNavigate } from 'react-router-dom';
 
 function CheckoutComponent() {
 
+    const navigate = useNavigate();
+    const {listCart} = useContext(CartContext);
     const userId = localStorage.getItem('userId');
     const phoneRegExp = /^(0?)(3[2-9]|5[6|8|9]|7[0|6-9]|8[0-6|8|9]|9[0-4|6-9])[0-9]{7}$/
     const[listOrder, setListOrder] = useState([]);
@@ -38,18 +42,27 @@ function CheckoutComponent() {
             .required('Trường này là băt buộc!'),
         }),
         onSubmit: (values) => {
-            let data = {
-                list_cart: listOrder,
-                user_id: userId,
-                total: total,
-                name_order: values.name,
-                phone: values.phone,
-                address: values.address,
-                email: values.email
+            if(listCart.length > 0) {
+                let data = {
+                    list_cart: listOrder,
+                    user_id: userId,
+                    total: total,
+                    name_order: values.name,
+                    phone: values.phone,
+                    address: values.address,
+                    email: values.email
+                }
+                addOrder((res) => {
+                    if(res.statusCode === 200) {
+                        toast.success("Đặt hàng thành công!",{className:'toast-message'});
+                        navigate('/home/history');
+                    } else {
+                        toast.error("Có lỗi trong quá trình xử lý!",{className:'toast-message'});
+                    }
+                }, data)
+            } else {
+                toast.warn("Giỏ hàng của bạn đang trống!",{className:'toast-message'});
             }
-            addOrder((res) => {
-                console.log(res);
-            }, data)
         },
     })
 
@@ -63,7 +76,14 @@ function CheckoutComponent() {
     const handleDeleteCart = (id) => {
         deleteListCart((res) => {
             if(res.statusCode === 200) {
+                toast.success("Xóa thành công!",{
+                    className: 'toast-message'
+                });
                 handleGetCart();
+            } else {
+                toast.error("Có lỗi trong quá trình xử lý!",{
+                    className: 'toast-message'
+                });
             }
         },id)
     }

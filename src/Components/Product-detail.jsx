@@ -1,5 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from 'react';
+import { toast } from 'react-toastify';
 import { getListProductDetail,getListProductRelated } from "../Services/productService";
 import { addToCart } from "../Services/CartService";
 import { API_URL } from "../Constants/ApiConstant";
@@ -37,8 +38,12 @@ function ProductDetailComponent(props) {
       }
       addToCart((rs) => {
         if(rs.statusCode === 200) {
-          // navigate(`/home/checkout`);
+          toast.success("Thêm vào giỏ hàng thành công!",{
+            className: 'toast-message'
+          });
           handleGetListCart();
+        } else {
+          toast.error("Có lỗi trong quá trình xử lý!");
         }
       }, data)
     }

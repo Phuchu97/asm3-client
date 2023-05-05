@@ -10,6 +10,8 @@ import ViewOrderComponent from './Components/View-order';
 import { CartContext } from './Contexts/CartContext';
 import { getListCart } from './Services/CartService';
 import './App.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [listCart,setListCart] = useState([]);
@@ -38,6 +40,7 @@ function App() {
           </Route>
         </Routes>
       </CartContext.Provider>
+      <ToastContainer/>
     </div>
   );
 }
