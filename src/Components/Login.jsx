@@ -35,19 +35,20 @@ function LoginComponent() {
     const callbackRegister = (res) => {
         if(res.statusCode === 200) {
           IsRegister();
+          toast.success("Đăng ký thành công!", {className: 'toast-message'});
         } else {
         toast.error("Có lỗi trong quá trình xử lý!", {className: 'toast-message'});
         }
     }
 
-    async function HandleRegister() {
+    function HandleRegister() {
         try {
-          await registerAccount(callbackRegister, {
+          registerAccount(callbackRegister, {
             username: usernameRegister,
             password: passwordRegister
-          })
+          });
         } catch {
-          alert('Có lỗi trong quá trình đăng nhập!')
+          toast.error("Có lỗi trong quá trình xử lý!", {className: 'toast-message'});
         }
       };
 
