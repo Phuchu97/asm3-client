@@ -46,18 +46,18 @@ function CategoriesComponent() {
         <div className="home-header-page" style={styleBackground}>
             <div className="eewPUi"></div>
             <div className="home-page-title">
-            <div>
+            <div data-aos="fade-up" data-aos-duration="1000">
                 <h2>PHUMAI</h2>
                 <p>THE BEST CHOICE FOR YOU</p>
             </div>
             </div>
             <div className="down-animation"><i class="fa-solid fa-angle-down"></i></div>
         </div>
-        <div className="categories-title">
+        <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
             <h2>CAREFULLY CREATED CONLLECTIONS</h2>
             <p>BROWSE OUR CATEGORIES</p>
         </div>
-        <div className="category row">
+        <div className="category row" data-aos="fade-up" data-aos-duration="2000">
             {
                 listCategories.length > 0 && listCategories.map((obj, key) => {
                     return (

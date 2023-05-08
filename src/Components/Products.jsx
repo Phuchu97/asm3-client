@@ -35,11 +35,16 @@ function ProductsComponent() {
                />
              </div>
              </div> : <div className="products">
-                   <div className="products-title">
+                   <div 
+                        className="products-title" 
+                        data-aos="fade-right"
+                        data-aos-duration="1000"
+                        data-aos-easing="ease-in-sine"
+                    >
                        <h2>MADE THE HARD WAY</h2>
                        <p>TOP TRENDING PRODUCTS</p>
                    </div>
-                   <div className="product row">
+                   <div className="product row" data-aos="fade-up" data-aos-duration="1000">
                        {
                            listProducts.length > 0 && listProducts.map(obj => {
                                return (
