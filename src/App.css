@@ -17,3 +17,19 @@ body {
 .toast-message {
   font-size: 1.6rem;
 }
+
+.loading {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #746f6f;
+}
+
+.active {
+  display: block;
+}
+
+.not-active {
+  display: none;
+}

@@ -1,31 +1,48 @@
-import { useNavigate,Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import '../css/categories.css';
 import { getFileSlide, getListCategories } from "../Services/HomeService";
+import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
 
 function CategoriesComponent() {
-
     const[styleBackground,setStyleBackground] = useState(null);
+    const [isLoading,setIsLoading] = useState(true);
     const[listCategories,setListCategories] = useState([]);
 
     useEffect(() => {
         getFileSlide((res) => {
-            setStyleBackground({
-                background: `url(${API_URL+'/'+res.data[0].image.file_url})`,
-                backgroundRepeat: 'no-repeat',
-                backgroundPosition: 'center',
-                backgroundSize: 'cover'
-            });
+            if(res.statusCode === 200) {
+                setStyleBackground({
+                    background: `url(${API_URL+'/'+res.data[0].image.file_url})`,
+                    backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover'
+                });
+                setIsLoading(false);
+            } 
         });
         getListCategories((res) => {
-            console.log(res.data);
-            setListCategories(res.data)
+            setListCategories(res.data);
+            setIsLoading(false);
         })
-    },[])
+    },[]);
   
   return (
-    <div className="categories">
+    <div>
+        {
+     isLoading? <div className={isLoading? 'active':'not-active'}>
+          <div className="loading">
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+            />
+          </div>
+        </div> : <div className="categories">
         <div className="home-header-page" style={styleBackground}>
             <div className="eewPUi"></div>
             <div className="home-page-title">
@@ -54,6 +71,8 @@ function CategoriesComponent() {
                 })
             }
         </div>
+    </div>
+        }
     </div>
   );
 }

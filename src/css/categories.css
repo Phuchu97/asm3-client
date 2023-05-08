@@ -63,3 +63,18 @@
     text-align: center;
 }
 
+.categories-title,.category img  {
+    animation: animationHome 1s linear;
+}
+
+@keyframes animationHome {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    } 
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

@@ -1,12 +1,10 @@
-import { Outlet, useNavigate,Link } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { Outlet} from "react-router-dom";
 import NavbarComponent from "./Navbar";
 import FooterComponent from "./Footer";
-import '../css/home.css'
-import { getListCart } from "../Services/CartService";
+import '../css/home.css';
 
 function HomeComponent() {
-
+  
   return (
     <div className="home">
       <NavbarComponent/>

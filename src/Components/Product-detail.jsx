@@ -3,6 +3,7 @@ import { useEffect, useState, useContext } from 'react';
 import { toast } from 'react-toastify';
 import { getListProductDetail,getListProductRelated } from "../Services/productService";
 import { addToCart } from "../Services/CartService";
+import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
 import { CartContext } from "../Contexts/CartContext";
 import Numeral from 'react-numeral';
@@ -12,6 +13,7 @@ import '../css/product-detail.css';
 function ProductDetailComponent(props) {
 
   const navigate = useNavigate();
+  const [isLoading,setIsLoading] = useState(true);
   const {handleGetListCart} = useContext(CartContext);
   const userId = localStorage.getItem('userId')
   const { id } = useParams();
@@ -52,18 +54,33 @@ function ProductDetailComponent(props) {
   useEffect(() => {
     getListProductDetail((res) => {
       if(res.statusCode === 200) {
-        setProduct(res.data)
+        setProduct(res.data);
         getListProductRelated((rs) => {
           const result = rs.data.filter(obj => obj._id !== res.data._id);
           setProductRelated(result)
-        }, {id: res.data.category_id})
+        }, {id: res.data.category_id});
+        setIsLoading(false);
       }
     }, {id})
   }, [])
   
   
   return (
-    <div className="product-detail home">
+    <div>
+      {
+     isLoading? <div className={isLoading? 'active':'not-active'}>
+          <div className="loading">
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+            />
+          </div>
+        </div> : <div className="product-detail home">
         <div className="head-floor"></div>
         <div className="product-detail-content row">
             <div className="col-6 product-detail-content-left">
@@ -135,6 +152,9 @@ function ProductDetailComponent(props) {
           )
         }
     </div>
+    }
+    </div>
+    
   );
 }
 
