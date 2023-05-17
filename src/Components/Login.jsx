@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { Form, FormGroup } from "react-bootstrap";
 import '../css/login.css';
 import TextField from '@mui/material/TextField';
+import { ColorRing } from 'react-loader-spinner';
 import { loginPage,registerAccount } from "../Services/LoginService";
 
 function LoginComponent() {
     const navigate = useNavigate();
+    const token = localStorage.getItem('token');
     const [isRegisterOpen, setIsRegisterOpen] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -63,8 +65,27 @@ function LoginComponent() {
         toast.error("Có lỗi trong quá trình đăng nhập!", {className: 'toast-message'});
       }
     };
+
+    useEffect(() => {
+      if(token) navigate('/home');
+    });
    
     return (
+      <div>
+        {
+     token? <div className={token? 'active':'not-active'}>
+          <div className="loading">
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
+            />
+          </div>
+        </div> :
       <div className="login">
         <div className="login-box">
           {/* <Navbar>
@@ -142,6 +163,7 @@ function LoginComponent() {
             </Form>
           )}
         </div>
+      </div>}
       </div>
     );
 }
