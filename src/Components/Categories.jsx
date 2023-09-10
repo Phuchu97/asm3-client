@@ -61,11 +61,11 @@ function CategoriesComponent() {
             {
                 listCategories.length > 0 && listCategories.map((obj, key) => {
                     return (
-                        <div key={key} className="col-6 mt-4">
+                        <div key={key} className="col-3 mt-4 category-child">
                             <div className="category-item">
                                 <img src={obj.image} alt="" />
-                                <div className="category-item-title">{obj.name}</div>
                             </div>
+                            <div className="category-item-title">{obj.name}</div>
                         </div>
                     )
                 })
