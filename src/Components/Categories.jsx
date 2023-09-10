@@ -13,7 +13,7 @@ function CategoriesComponent() {
         getFileSlide((res) => {
             if(res.statusCode === 200) {
                 setStyleBackground({
-                    background: `url(${API_URL+'/'+res.data[0].image.file_url})`,
+                    background: `url(${res.data[0].image})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover'
@@ -47,14 +47,14 @@ function CategoriesComponent() {
             <div className="eewPUi"></div>
             <div className="home-page-title">
             <div data-aos="fade-up" data-aos-duration="1000">
-                <h2>PHUMAI</h2>
-                <p>THE BEST CHOICE FOR YOU</p>
+                <h2>NGUYENQUYMANH</h2>
+                <p>PHỤC VỤ TẬN TÂM - CHẤT LƯỢNG HÀNG ĐẦU</p>
             </div>
             </div>
             <div className="down-animation"><i class="fa-solid fa-angle-down"></i></div>
         </div>
         <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
-            <h2>CAREFULLY CREATED CONLLECTIONS</h2>
+            <h2>TENSHI INVERTER MULTISTAGE CENTRIUFUGAL PUMP</h2>
             <p>BROWSE OUR CATEGORIES</p>
         </div>
         <div className="category row" data-aos="fade-up" data-aos-duration="2000">
@@ -63,7 +63,7 @@ function CategoriesComponent() {
                     return (
                         <div key={key} className="col-6 mt-4">
                             <div className="category-item">
-                                <img src={API_URL+'/'+obj.image.file_url} alt="" />
+                                <img src={obj.image} alt="" />
                                 <div className="category-item-title">{obj.name}</div>
                             </div>
                         </div>

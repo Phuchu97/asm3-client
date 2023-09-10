@@ -85,18 +85,18 @@ function NavbarComponent(props) {
           onMouseOut={handleMouseOutHeader}
         >
           <div className="header-name header-left">
-            <h5 className="header-name-item" onClick={backHome} style={{color: colorTitle? '#f2da98' : ''}}>Home</h5>
-            <h5 className="header-name-item" onClick={moveToShop} style={{color: colorTitle? '' : '#f2da98'}}>Shop</h5>
+            <h5 className="header-name-item mr-4" onClick={backHome} style={{color: colorTitle? '#f2da98' : ''}}>Trang Chủ</h5>
+            <h5 className="header-name-item" onClick={moveToShop} style={{color: colorTitle? '' : '#f2da98'}}>Giới thiệu</h5>
           </div>
 
           <div className='header-logo' style={colorLogo}>
-            <h3>BOUTIQUE</h3>
+            <h3>TENSHI</h3>
           </div>
 
           <div className="header-user header-right">
             <div className="header-user-item header-right-flex" onClick={moveToCart}>
               <div className="header-user-item-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
-              <p className="header-user-item-name">Cart</p>
+              <p className="header-user-item-name">Giỏ hàng</p>
               {
                 listCart.length > 0 && <div className="cart-number">{listCart.length}</div>
               }
@@ -105,9 +105,9 @@ function NavbarComponent(props) {
               <div className="header-user-item-icon"><i class="fa-regular fa-circle-user"></i></div>
               <p className="header-user-item-name">{username}</p>
             </div>
-            <div className="header-user-item " onClick={clearUser}>
+            {/* <div className="header-user-item " onClick={clearUser}>
               <p className="header-user-item-logout">Logout</p>
-            </div>
+            </div> */}
           </div>
         </div>
   );
