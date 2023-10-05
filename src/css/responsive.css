@@ -16,4 +16,16 @@
     .category {
         margin: 0 !important;
     }
+    .home-page-title h2 {
+        font-size: 2rem;
+    }
+    .home-page-title p {
+        font-size: 1rem;
+    }
+    .categories-title h2 {
+        font-size: 2rem;
+    }
+    .categories-title p {
+        font-size: 1.4rem;
+    }
 }

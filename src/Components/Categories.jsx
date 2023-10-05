@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import '../css/responsive.css';
 import '../css/categories.css';
+import '../css/responsive.css';
 import { getFileSlide, getListCategories } from "../Services/HomeService";
 import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
@@ -55,8 +55,8 @@ function CategoriesComponent() {
             <div className="down-animation"><i class="fa-solid fa-angle-down"></i></div>
         </div>
         <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
-            <h2>TENSHI INVERTER MULTISTAGE CENTRIUFUGAL PUMP</h2>
-            <p>BROWSE OUR CATEGORIES</p>
+            <h2>CÔNG TY TNHH THÉP VƯỢNG PHÁT</h2>
+            <p>HỢP TÁC CÙNG PHÁT TRIỂN</p>
         </div>
         <div className="category row" data-aos="fade-up" data-aos-duration="2000">
             {
