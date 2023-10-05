@@ -1,0 +1,19 @@
+ /* Responsive */
+
+ @media (max-width: 798px ){
+    .header-left-responsive, .header-user-item-name {
+        display: none;
+    }
+    .mobile-sm {
+        display: block;
+    }
+    .header-logo h3 {
+        font-size: 2rem;
+    }
+    .header {
+        padding: 0 1rem;
+    }
+    .category {
+        margin: 0 !important;
+    }
+}

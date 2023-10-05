@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import '../css/responsive.css';
 import '../css/categories.css';
 import { getFileSlide, getListCategories } from "../Services/HomeService";
 import { ColorRing } from 'react-loader-spinner';
@@ -47,7 +48,7 @@ function CategoriesComponent() {
             <div className="eewPUi"></div>
             <div className="home-page-title">
             <div data-aos="fade-up" data-aos-duration="1000">
-                <h2>NGUYENQUYMANH</h2>
+                <h2>VUONGPHATSTEEL</h2>
                 <p>PHỤC VỤ TẬN TÂM - CHẤT LƯỢNG HÀNG ĐẦU</p>
             </div>
             </div>
@@ -61,7 +62,7 @@ function CategoriesComponent() {
             {
                 listCategories.length > 0 && listCategories.map((obj, key) => {
                     return (
-                        <div key={key} className="col-3 mt-4 category-child">
+                        <div key={key} className="col-xs-12 col-sm-12 col-md-3 col-lg-3 mt-4 category-child">
                             <div className="category-item">
                                 <img src={obj.image} alt="" />
                             </div>

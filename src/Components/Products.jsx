@@ -48,10 +48,10 @@ function ProductsComponent() {
                        {
                            listProducts.length > 0 && listProducts.map(obj => {
                                return (
-                                   <div className="col-3 mt-4">
+                                   <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 mt-4">
                                        <Link to={`/home/product-detail/${obj._id}`} style={{textDecoration: 'none'}}>
                                            <div className="product-item">
-                                               <img src={API_URL+'/'+obj.image[0].file_url} alt="product" />
+                                               <img src={obj.image[0]} alt="product" />
                                            </div>
                                            <div className="product-content">
                                                <h4>{obj.name}</h4>

@@ -30,7 +30,7 @@ function App() {
     <div className="App">
       <CartContext.Provider value={{listCart,handleGetListCart}}>
         <Routes>
-          <Route path="/" element={<LoginComponent/>}/>
+          {/* <Route path="/" element={<LoginComponent/>}/> */}
           <Route path="/home" element={<HomeComponent/>}>
             <Route path="" element={<HomePageComponent/>}/>
             <Route path="product-detail/:id" element={<ProductDetailComponent/>}/>

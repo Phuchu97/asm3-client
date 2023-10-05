@@ -1,5 +1,6 @@
 .home {
     color: aliceblue;
+    overflow: hidden;
 }
 
 .unLink {
@@ -69,10 +70,6 @@
 
 .header-user {
     font-size: 1.1rem;
-}
-
-.header-right-flex {
-    margin-right: 20px;
 }
 
 .header-user-item {
@@ -175,4 +172,9 @@
     right: -5px;
     text-align: center;
 }
+
+.mobile-sm {
+    display: none;
+}
+
 

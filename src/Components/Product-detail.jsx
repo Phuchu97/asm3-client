@@ -88,14 +88,14 @@ function ProductDetailComponent(props) {
                 {
                   product !== null && product.image.length>0 && (
                     product.image.map((item, key) => {
-                      return <img key={key} onMouseMove={handleImg} src={API_URL+'/'+item.file_url} alt="" />
+                      return <img key={key} onMouseMove={handleImg} src={item} alt="aaa" />
                     })
                     )
                   }
               </div>
               {
                 product !== null && product.image.length>0 && (
-                  <img src={imgUrl === ''? API_URL+'/'+product.image[0].file_url : imgUrl} alt="sss" />
+                  <img src={imgUrl === ''? product.image[0] : imgUrl} alt="sss" />
                 )
               }
               
@@ -136,7 +136,7 @@ function ProductDetailComponent(props) {
                       return (
                         <div key={key} className="col-2 mt-4">
                             <div className="product-item">
-                                <img src={API_URL+'/'+obj.image[0].file_url} alt="" />
+                                <img src={obj.image[0]} alt="" />
                             </div>
                             <div className="product-content">
                                 <h4>{obj.name}</h4>
