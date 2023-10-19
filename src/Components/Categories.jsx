@@ -56,7 +56,7 @@ function CategoriesComponent() {
         </div>
         <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
             <h2>SẢN PHẨM VƯỢT TRỘI VỀ CHẤT LƯỢNG</h2>
-            <p>CHÚNG TÔI THẾ MẠNH TRONG NHIỀU LĨNH VỰC</p>
+            <p>CHÚNG TÔI THẾ MẠNH TRONG CÁC LĨNH VỰC</p>
         </div>
         <div className="category row" data-aos="fade-up" data-aos-duration="2000">
             {

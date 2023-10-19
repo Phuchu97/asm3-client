@@ -31,8 +31,9 @@ function App() {
       <CartContext.Provider value={{listCart,handleGetListCart}}>
         <Routes>
           {/* <Route path="/" element={<LoginComponent/>}/> */}
-          <Route path="/home" element={<HomeComponent/>}>
+          <Route path="/" element={<HomeComponent/>}>
             <Route path="" element={<HomePageComponent/>}/>
+            <Route path="login" element={<LoginComponent/>}/>
             <Route path="product-detail/:id" element={<ProductDetailComponent/>}/>
             <Route path="checkout" element={<CheckoutComponent/>}/>
             <Route path="history" element={<HistoryComponent/>}/>

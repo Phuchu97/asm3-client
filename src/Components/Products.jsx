@@ -41,15 +41,15 @@ function ProductsComponent() {
                         data-aos-duration="1000"
                         data-aos-easing="ease-in-sine"
                     >
-                       <h2>MADE THE HARD WAY</h2>
-                       <p>TOP TRENDING PRODUCTS</p>
+                       <h2>SẢN XUẤT TỈ MỈ</h2>
+                       <p>SẢN PHẨM HÀNG ĐẦU</p>
                    </div>
                    <div className="product row" data-aos="fade-up" data-aos-duration="1000">
                        {
                            listProducts.length > 0 && listProducts.map(obj => {
                                return (
                                    <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3 mt-4">
-                                       <Link to={`/home/product-detail/${obj._id}`} style={{textDecoration: 'none'}}>
+                                       <Link to={`/product-detail/${obj._id}`} style={{textDecoration: 'none'}}>
                                            <div className="product-item">
                                                <img src={obj.image[0]} alt="product" />
                                            </div>

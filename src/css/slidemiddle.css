@@ -1,0 +1,32 @@
+.slide-middle {
+    min-height: 400px;
+    margin-top: 6rem;
+}
+
+.slide-middle-content-left h2 {
+    letter-spacing: 0.5rem;
+    margin-bottom: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+    -webkit-background-clip: text;
+    color: rgb(0, 96, 57);;
+}
+
+.slide-middle-content-left span {
+    font-size: 20px;
+    line-height: 1.6em;
+    color: rgb(103,103,103);
+    margin: 0 1rem;
+}
+
+.slide-middle-content-right {
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide-middle-content-right img {
+    min-height: 400px;
+    width: 100%;
+    object-fit: cover;
+}

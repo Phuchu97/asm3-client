@@ -47,11 +47,11 @@ function NavbarComponent(props) {
   };
 
   const moveToCart = () => {
-    navigate('/home/checkout');
+    navigate('/checkout');
   };
 
   const moveToHistory = () => {
-    navigate('/home/history');
+    navigate('/history');
   };
 
   const handleMouseMoveHeader = () => {
@@ -72,7 +72,7 @@ function NavbarComponent(props) {
 
   const backHome = () => {
     setColorTitle(true);
-    navigate('/home');
+    navigate('/');
   };
 
   const moveToShop = () => {
