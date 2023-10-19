@@ -10,7 +10,7 @@ function SlideMiddleComponent() {
 
     return (
         <Grid container className='slide-middle' >
-            <Grid item xs={6} className="slide-middle-content-left" display={'flex'} alignItems={'center'} justifyContent={'center'}>
+            <Grid item xs={12} sm={12} md={6} lg={6} className="slide-middle-content-left" display={'flex'} alignItems={'center'} justifyContent={'center'}>
                 <Box width={'70%'}>
                     <Box data-aos="fade-up" data-aos-duration="1000">
                         <Typography variant='h2'>Công Ty TNHH Thép Vượng Phát</Typography>
@@ -26,7 +26,7 @@ function SlideMiddleComponent() {
                 </Box>
             </Grid>
 
-            <Grid item xs={6} className="slide-middle-content-right">
+            <Grid item xs={12} sm={12} md={6} lg={6} className="slide-middle-content-right">
                 <Box data-aos="zoom-in-up" data-aos-duration="1000">
                     <img src="https://d1ra4hr810e003.cloudfront.net/media/3F49D1AC-FD73-43A5-BD0F1309BD801E13/F0132A68-1A68-4625-8107B4BED77FF85B/Tata%20Steel%20TV-_44C3981.jpg" alt="Image Steel VuongPhat" />
                 </Box>
