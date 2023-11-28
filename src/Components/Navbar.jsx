@@ -96,6 +96,7 @@ function NavbarComponent(props) {
 
       <div className='header-logo' style={colorLogo}>
         <h3>VUONGPHAT</h3>
+        {/* <img src={require('../assets/images/logo.png')} alt="Image Steel VuongPhat" /> */}
       </div>
 
       <div className="header-user header-right">

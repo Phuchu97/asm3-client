@@ -1,6 +1,8 @@
 .slide-middle {
     min-height: 400px;
     margin-top: 6rem;
+    background: #e6dac23d;
+    padding: 5rem 0;
 }
 
 .slide-middle-content-left h2 {
@@ -21,12 +23,20 @@
 }
 
 .slide-middle-content-right {
-    overflow: hidden;
-    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
 }
 
 .slide-middle-content-right img {
     min-height: 400px;
     width: 100%;
     object-fit: cover;
+}
+
+.slide-middle-content-right-box {
+    /* border-radius: 10px; */
+    overflow: hidden;
+    width: 85%;
 }

@@ -1,5 +1,5 @@
 .footer {
-    background-color: black;
+    background-color: #fff;
 }
 
 .footer-content {
@@ -8,20 +8,36 @@
 }
 
 .footer-content-item {
-    color: aliceblue;
+    color: black;
     text-align: center;
     align-self: center;
+    overflow: hidden;
 }
 
-.footer-content-item h6 {
-    font-size: 1.8rem;
+.footer-content-item:hover img {
+    scale: 1.1;
+}
+
+.footer-content-item img {
+    transition: .4s linear;
+}
+
+.footer-content-left img {
+    width: 16rem;
+    object-fit: cover;
+}
+
+.footer-content-right img {
+    width: 90%;
+    object-fit: cover;
+    height: 120px;
 }
 
 .footer-content-item a {
     font-size: 1.2rem;
     display: block;
     text-decoration: none;
-    color: aliceblue;
+    color: black;
     opacity: 0.4;
     transition: .2s linear;
 }
@@ -36,7 +52,7 @@
     height: 6.5rem;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: aliceblue;
     position: relative;
 }
 
