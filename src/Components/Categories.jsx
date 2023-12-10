@@ -2,11 +2,12 @@ import { useEffect, useState } from 'react';
 import '../css/categories.css';
 import '../css/responsive.css';
 import { getFileSlide, getListCategories } from "../Services/HomeService";
+import background from '../assets/images/banner-1.jpg';
 import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
 
 function CategoriesComponent() {
-    // const [styleBackground, setStyleBackground] = useState(null);
+    const [styleBackground, setStyleBackground] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [listCategories, setListCategories] = useState([]);
 
@@ -29,12 +30,12 @@ function CategoriesComponent() {
             <div className="categories">
                     <div 
                         className="home-header-page" 
-                        // style={{
-                        //     backgroundImage: '../assets/images/banner-1.jpg',
-                        //     backgroundRepeat: 'no-repeat',
-                        //     backgroundPosition: 'center',
-                        //     backgroundSize: 'cover'
-                        // }}
+                        style={{
+                            backgroundImage: `url(${background})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundPosition: 'center',
+                            backgroundSize: 'cover'
+                        }}
                     >
                         <video
                             className='home-header-page-video'
