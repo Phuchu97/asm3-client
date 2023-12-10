@@ -25,10 +25,11 @@ function CategoriesComponent() {
         //         setIsLoading(false);
         //     }
         // });
+        
         getListCategories((res) => {
             setListCategories(res.data);
             setIsLoading(false);
-        })
+        });
     }, []);
 
     return (
