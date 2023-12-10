@@ -42,12 +42,12 @@ function SlideMiddleComponent() {
                             <img src={require('../assets/images/footer-VP.jpg')} alt="Image Steel VuongPhat" />
                         </Box>
                     </Grid>
-                    <Grid item md={6} lg={6} display={'flex'} justifyContent={'center'}>
+                    <Grid item md={12} lg={12} display={'flex'} justifyContent={'start'}>
                         <Box className='hexagon-container' data-aos="zoom-in-up" data-aos-duration="1000">
                             <img src={require('../assets/images/footer-VP.jpg')} alt="Image Steel VuongPhat" />
                         </Box>
                     </Grid>
-                    <Grid item md={6} lg={6} display={'flex'} justifyContent={'center'}>
+                    <Grid item md={12} lg={12} display={'flex'} justifyContent={'center'}>
                         <Box className='hexagon-container' data-aos="zoom-in-up" data-aos-duration="1000">
                             <img src={require('../assets/images/footer-VP.jpg')} alt="Image Steel VuongPhat" />
                         </Box>
