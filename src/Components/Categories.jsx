@@ -6,26 +6,18 @@ import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
 
 function CategoriesComponent() {
-    const [styleBackground, setStyleBackground] = useState(null);
+    // const [styleBackground, setStyleBackground] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [listCategories, setListCategories] = useState([]);
-    const videoUrl = "https://firebasestorage.googleapis.com/v0/b/funix-chat.appspot.com/o/images%2Fbanner-3.mp429716014-be70-4ba0-94b9-20d501b661ec?alt=media&token=d36f1917-2fd1-41b9-9d93-b72c2b7b585e"
 
     useEffect(() => {
         // getFileSlide((res) => {
         //     if (res.statusCode === 200) {
-        //         console.log(res.data[0]);
-        //         setStyleBackground(res.data[0].image)
-        //         // setStyleBackground({
-        //         //     background: `url(${res.data[0].image})`,
-        //         //     backgroundRepeat: 'no-repeat',
-        //         //     backgroundPosition: 'center',
-        //         //     backgroundSize: 'cover'
-        //         // });
+        //         setStyleBackground({});
         //         setIsLoading(false);
         //     }
         // });
-        
+
         getListCategories((res) => {
             setListCategories(res.data);
             setIsLoading(false);
@@ -34,31 +26,26 @@ function CategoriesComponent() {
 
     return (
         <div>
-            {
-                isLoading ? <div className={isLoading ? 'active' : 'not-active'}>
-                    <div className="loading">
-                        <ColorRing
-                            visible={true}
-                            height="80"
-                            width="80"
-                            ariaLabel="blocks-loading"
-                            wrapperStyle={{}}
-                            wrapperClass="blocks-wrapper"
-                            colors={['#e15b64', '#f47e60', '#f8b26a', '#abbd81', '#849b87']}
-                        />
-                    </div>
-                </div> : <div className="categories">
-                    <div className="home-header-page">
+            <div className="categories">
+                    <div 
+                        className="home-header-page" 
+                        // style={{
+                        //     backgroundImage: '../assets/images/banner-1.jpg',
+                        //     backgroundRepeat: 'no-repeat',
+                        //     backgroundPosition: 'center',
+                        //     backgroundSize: 'cover'
+                        // }}
+                    >
                         <video
                             className='home-header-page-video'
                             autoPlay
                             loop
                             muted
-                            poster={videoUrl}
+                            poster={require('../assets/images/banner-3.mp4')}
 
                         >
                             <source
-                                src={videoUrl}
+                                src={require('../assets/images/banner-3.mp4')}
                                 type="video/mp4"
                             />
                         </video>
@@ -90,7 +77,6 @@ function CategoriesComponent() {
                         }
                     </div>
                 </div>
-            }
         </div>
     );
 }
