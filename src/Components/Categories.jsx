@@ -18,6 +18,7 @@ function CategoriesComponent() {
         //         setIsLoading(false);
         //     }
         // });
+        // Hiện tại ảnh đang để tĩnh, vẫn chưa động thay thế trên admin
 
         getListCategories((res) => {
             setListCategories(res.data);

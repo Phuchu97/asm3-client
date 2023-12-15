@@ -16,6 +16,10 @@
     ;
 }
 
+.slide-middle-content-text {
+    width: 70%;
+}
+
 .slide-middle-content-left span {
     font-size: 20px;
     line-height: 1.6em;
@@ -42,9 +46,8 @@
 }
 
 .hexagon-container {
-    width: 350px;
-    height: 300px;
     position: relative;
+    height: 36vh;
     overflow: hidden;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
@@ -53,4 +56,56 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.hexagon-first {
+    width: 40%;
+}
+
+.hexagon-second {
+    width: 80%;
+}
+
+@media (max-width: 1500px) and (min-width: 1201px) {
+    .hexagon-container {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 1200px) {
+    .slide-middle-content-right {
+        margin-top: 6rem !important;
+    }
+
+    .slide-middle-content-text {
+        width: 70%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hexagon-container {
+        height: 34vh;
+    }
+}
+
+@media (max-width: 899px) {
+    .hexagon-container {
+        height: 30vh;
+    }
+
+    .slide-middle-content-text {
+        width: 85%;
+    }
+}
+
+@media (max-width: 540px) {
+    .hexagon-container {
+        height: 30vh;
+    }
+}
+
+@media (max-width: 512px) {
+    .hexagon-container {
+        height: 20vh;
+    }
 }
