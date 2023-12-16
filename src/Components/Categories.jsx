@@ -3,7 +3,7 @@ import '../css/categories.css';
 import '../css/responsive.css';
 import { getFileSlide, getListCategories } from "../Services/HomeService";
 import background from '../assets/images/banner-1.jpg';
-import { Box, Button } from '@mui/material';
+import { Box, Button, Grid } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import { ColorRing } from 'react-loader-spinner';
 import { API_URL } from "../Constants/ApiConstant";
@@ -71,41 +71,55 @@ function CategoriesComponent() {
                     <h2>SẢN PHẨM VƯỢT TRỘI VỀ CHẤT LƯỢNG</h2>
                     <p>CHÚNG TÔI THẾ MẠNH TRONG CÁC LĨNH VỰC</p>
                 </div>
-                <div className="category row pc-tab" data-aos="fade-up" data-aos-duration="2000">
-                    {
-                        listCategories.length > 0 && listCategories.map((obj, key) => {
-                            return (
-                                <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
-                                    <div className="category-item">
-                                        <img src={obj.image} alt="" />
+                {isLoading ? <Grid display={'flex'} justifyContent={'center'}>
+                    <ColorRing
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
+                    />
+                </Grid> : <Grid>
+                    <div className="category row pc-tab" data-aos="fade-up" data-aos-duration="2000">
+                        {
+                            listCategories.length > 0 && listCategories.map((obj, key) => {
+                                return (
+                                    <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
+                                        <div className="category-item">
+                                            <img src={obj.image} alt="" />
+                                        </div>
+                                        <div className="category-item-title">{obj.name}</div>
                                     </div>
-                                    <div className="category-item-title">{obj.name}</div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-                <div className="category row mobile" data-aos="fade-up" data-aos-duration="2000">
-                    {
-                        listCategories.slice(0, visibleCategories).map((obj, key) => {
-                            return (
-                                <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
-                                    <div className="category-item">
-                                        <img src={obj.image} alt="" />
+                                )
+                            })
+                        }
+                    </div>
+                    <div className="category row mobile" data-aos="fade-up" data-aos-duration="2000">
+                        {
+                            listCategories.slice(0, visibleCategories).map((obj, key) => {
+                                return (
+                                    <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
+                                        <div className="category-item">
+                                            <img src={obj.image} alt="" />
+                                        </div>
+                                        <div className="category-item-title">{obj.name}</div>
                                     </div>
-                                    <div className="category-item-title">{obj.name}</div>
-                                </div>
-                            )
-                        })
-                    }
-                </div>
-                {listCategories.length > visibleCategories && (
-                    <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'} onClick={handleViewMore}>
-                        <Button style={{ fontSize: '12px', padding: '10px', color: '#006039' }}>
-                            Xem thêm
-                        </Button>
-                    </Box>
-                )}
+                                )
+                            })
+                        }
+                    </div>
+                    {listCategories.length > visibleCategories && (
+                        <Box className='mobile'>
+                            <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'} onClick={handleViewMore}>
+                                <Button style={{ fontSize: '12px', padding: '10px', color: '#006039' }}>
+                                    Xem thêm
+                                </Button>
+                            </Box>
+                        </Box>
+                    )}
+                </Grid>}
             </div>
         </div>
     );
