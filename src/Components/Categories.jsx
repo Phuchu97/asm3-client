@@ -6,7 +6,6 @@ import background from '../assets/images/banner-1.jpg';
 import { Box, Button, Grid } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import { ColorRing } from 'react-loader-spinner';
-import { API_URL } from "../Constants/ApiConstant";
 
 function CategoriesComponent() {
     const [styleBackground, setStyleBackground] = useState(null);
