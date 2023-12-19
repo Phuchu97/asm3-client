@@ -72,6 +72,28 @@
     text-align: center;
 }
 
+.mobile {
+    display: none;
+}
+
+.view-more-btn {
+
+}
+
+@media (max-width: 576px){
+    .pc-tab {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .categories-title {
+        padding: 0 0.4rem;
+    }
+}
+
 
 @media (max-width: 798px ){
     .category {
