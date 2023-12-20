@@ -31,11 +31,7 @@ function SlideMiddleComponent() {
                         <Box data-aos="fade-up" data-aos-duration="1000">
                             <Typography variant='h2'>Công Ty TNHH Thép Vượng Phát</Typography>
                             <Box padding={'0 1.4rem'} style={{ textAlign: 'justify' }}>
-                                <Typography variant='p' >Là Công ty sản xuất công nghiệp hàng đầu Việt Nam.
-                                    Khởi đầu từ một Công ty chuyên buôn bán các loại máy xây dựng từ tháng 8/1992,
-                                    Hòa Phát lần lượt mở rộng sang các lĩnh vực khác như Nội thất, ống thép, thép xây dựng,
-                                    điện lạnh, bất động sản và nông nghiệp.
-                                    Ngày 15/11/2007, Hòa Phát chính thức niêm yết cổ phiếu trên thị trường chứng khoán Việt Nam với mã chứng khoán HPG.
+                                <Typography variant='p' >
                                 </Typography>
                             </Box>
                         </Box>
