@@ -1,0 +1,18 @@
+
+.slide-partner-title {
+    position: relative;
+}
+
+.slide-partner-title::after {
+    content: "";
+    width: 5rem;
+    height: 3px;
+    background-color: #f16f04;
+    position: absolute;
+    bottom: -20px;
+}
+
+.slide-partner-energy {
+    width: 90% !important;
+    margin: auto;
+}

@@ -16,16 +16,19 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [listCart,setListCart] = useState([]);
   const userId = localStorage.getItem('userId');
+
   const handleGetListCart = () => {
     getListCart((res) => {
       if(res.statusCode === 200) {
         setListCart(res.data);
       }
-    }, userId)
+    }, userId);
   };
+
   useEffect(() => {
     handleGetListCart();
-  },[])
+  },[]);
+
   return (
     <div className="App">
       <CartContext.Provider value={{listCart,handleGetListCart}}>
