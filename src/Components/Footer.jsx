@@ -4,6 +4,7 @@ import '../css/footer.css';
 import { Grid, Box, Typography } from '@mui/material';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import EmailIcon from '@mui/icons-material/Email';
+
 function FooterComponent() {
 
   const handleOnTop = () => {
