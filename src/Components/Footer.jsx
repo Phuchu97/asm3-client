@@ -55,7 +55,7 @@ function FooterComponent() {
               </Box>
 
               <Box display={'flex'} alignItems={'center'} justifyContent={'center'} padding={'1.2rem 0'}>
-                <Typography variant="p">Trụ sở chính: Xã Vĩnh Ninh, Huyện Vĩnh Tường, Tỉnh Vĩnh Phúc</Typography>
+                <Typography variant="p">Nhà máy sản xuất: Xã Vĩnh Ninh, Huyện Vĩnh Tường, Tỉnh Vĩnh Phúc</Typography>
               </Box>
             </Grid>
           </Grid>

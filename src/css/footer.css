@@ -3,7 +3,7 @@
 }
 
 .footer-content {
-    height: 30rem;
+    min-height: 30rem;
     margin: 0;
 }
 
@@ -12,14 +12,6 @@
     text-align: center;
     align-self: center;
     overflow: hidden;
-}
-
-.footer-content-item:hover img {
-    scale: 1.1;
-}
-
-.footer-content-item img {
-    transition: .4s linear;
 }
 
 .footer-content-left img {

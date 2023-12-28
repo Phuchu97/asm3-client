@@ -70,7 +70,7 @@ function SlidePartnerComponent() {
                     colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
                 />
             </Grid> : <Grid container className='slide-partner' style={{ background: '#e6dac23d', marginTop: '42px' }} >
-                <Grid item xs={12} sm={12} md={12} lg={12} style={{ paddingTop: '45px' }} className="slide-partner-content" data-aos="zoom-in-up" data-aos-duration="1000">
+                <Grid item xs={12} sm={12} md={12} lg={12} style={{ paddingTop: '45px' }} className="slide-partner-content" data-aos="fade-up" data-aos-duration="1000">
                     <Box sx={{ marginBottom: '5rem' }} display={'flex'} alignItems={'center'} justifyContent={'center'} className='slide-partner-title'>
                         <Typography
                             variant='h3' color={'rgb(121 103 50 / 84%)'}
