@@ -50,7 +50,11 @@ function CategoriesComponent() {
                         loop
                         muted
                         poster={require('../assets/images/banner-3.mp4')}
-                        playsInline
+                        playsInline=""
+                        controlslist="nofullscreen nodownload"
+                        disablepictureinpicture=""
+                        disableremoteplayback=""
+                        preload="metadata"
                     >
                         <source
                             src={require('../assets/images/banner-3.mp4')}
