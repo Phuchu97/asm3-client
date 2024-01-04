@@ -86,3 +86,10 @@
         font-size: 12px !important;
     }
 }
+
+
+@media (max-width: 412px) {
+    .product {
+        margin: 0 5vw;
+    }
+}
