@@ -52,6 +52,11 @@
     cursor: pointer;
 }
 
+.product-slide-item:hover .product-content>h4,.product-slide-item:hover .product-content>p {
+    color: #bea662; 
+    opacity: 1;
+}
+
 .product-content {
     padding-top: 2rem;
 }
@@ -72,9 +77,12 @@
     font-size: 1.5rem;
 }
 
+.button-view-more {
+    font-size: 16px !important;
+}
 
-.product-content:hover,.product-content:hover h4,.product-content:hover p {
-    cursor: pointer;
-    color: #bea662;   
-    opacity: 1;
+@media (max-width: 768px) {
+    .button-view-more {
+        font-size: 12px !important;
+    }
 }

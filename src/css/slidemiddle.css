@@ -80,6 +80,14 @@
     .slide-middle-content-text {
         width: 70%;
     }
+
+    .hexagon-first {
+        width: 30%;
+    }
+
+    .hexagon-second {
+        width: 60%;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -95,6 +103,20 @@
 
     .slide-middle-content-text {
         width: 85%;
+    }
+}
+
+@media (max-width: 849px) {
+    .hexagon-first {
+        width: 38%;
+    }
+
+    .hexagon-container {
+        height: 30vh;
+    }
+
+    .hexagon-second {
+        width: 76%;
     }
 }
 

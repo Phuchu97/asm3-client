@@ -17,6 +17,10 @@
     background-image: url('https://content.rolex.com/dam/homepage/cut-out/homepage-datejust-41-m126333-0010-cut-out.jpg');
 }
 
+.categories-title {
+    padding-bottom: 2rem;
+}
+
 .categories-title h2 {
     font-size: 2.5rem;
 }
@@ -90,7 +94,8 @@
     }
 
     .categories-title {
-        padding: 0 0.4rem;
+        padding-right:  0.4rem;
+        padding-left:  0.4rem;
     }
 }
 

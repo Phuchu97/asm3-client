@@ -1,17 +1,13 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, Navigate } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { getListProducts } from "../Services/productService";
 import { API_URL } from "../Constants/ApiConstant";
 import { ColorRing } from 'react-loader-spinner';
 import '../css/products.css'
 import Numeral from 'react-numeral';
-import { Grid, Typography } from "@mui/material";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import { CardActionArea } from '@mui/material';
+import { Grid, Typography, Button, Box } from "@mui/material";
 import Slider from 'react-slick';
-
+import EastIcon from '@mui/icons-material/East';
 
 function ProductsComponent() {
 
@@ -22,23 +18,27 @@ function ProductsComponent() {
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 2,
+        rows: 2,
         responsive: [
             {
                 breakpoint: 1480,
                 settings: {
                     slidesToShow: 5,
+                    rows: 2,
                 },
             },
             {
                 breakpoint: 1280,
                 settings: {
                     slidesToShow: 4,
+                    rows: 2,
                 },
             },
             {
                 breakpoint: 1039,
                 settings: {
                     slidesToShow: 3,
+                    rows: 2,
                 },
             },
             {
@@ -46,6 +46,7 @@ function ProductsComponent() {
                 settings: {
                     autoplay: true,
                     slidesToShow: 2,
+                    rows: 2,
                 },
             },
             {
@@ -54,9 +55,14 @@ function ProductsComponent() {
                     autoplay: true,
                     slidesToShow: 1,
                     dots: true,
+                    rows: 2,
                 },
             },
         ],
+    };
+
+    const handleViewMore = () => {
+
     };
 
     useEffect(() => {
@@ -92,30 +98,48 @@ function ProductsComponent() {
                             colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
                         />
                     </Grid>
-                </div> : 
-                <div className="products">
-                    <div className="product " data-aos="fade-up" data-aos-duration="1000">
-                    <Slider {...settings}>
-                        {
-                            listProducts.length > 0 && listProducts.map(obj => {
-                                return (
-                                    <Grid className="product-slide-item">
-                                        <Link to={`/product-detail/${obj._id}`} style={{ textDecoration: 'none' }}>
-                                            <Grid className="product-item">
-                                                <img src={obj.image[0]} alt="product" />
+                </div> :
+                    <div className="products">
+                        <div className="product " data-aos="fade-up" data-aos-duration="1000">
+                            <Slider {...settings}>
+                                {
+                                    listProducts.length > 0 && listProducts.map(obj => {
+                                        return (
+                                            <Grid className="product-slide-item" marginBottom={'30px'}>
+                                                <Link to={`/product-detail/${obj._id}`} style={{ textDecoration: 'none' }}>
+                                                    <Grid className="product-item">
+                                                        <img src={obj.image[0]} alt="product" />
+                                                    </Grid>
+                                                    <Grid className="product-content">
+                                                        <Typography variant="h4">{obj.name}</Typography>
+                                                    </Grid>
+                                                </Link>
+                                                <Grid className="product-content" textAlign={'center'}>
+                                                    {
+                                                        obj.price > 1000 ? <Typography><Numeral value={obj.price} format={"0,0"} /> VND</Typography> :
+                                                            <Link to={"https://zalo.me/0967870722"}>
+                                                                <Button style={{ fontSize: '16px', padding: '6px 10px', color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
+                                                                    Liên hệ
+                                                                </Button>
+                                                            </Link>
+                                                    }
+                                                </Grid>
                                             </Grid>
-                                            <Grid className="product-content">
-                                                <Typography variant="h4">{obj.name}</Typography>
-                                                <Typography><Numeral value={obj.price} format={"0,0"} /> VND</Typography>
-                                            </Grid>
-                                        </Link>
-                                    </Grid>
-                                )
-                            })
-                        }
-                        </Slider>
+                                        )
+                                    })
+                                }
+                            </Slider>
+                        </div>
+                        {listProducts.length > 10 && (
+                            <Box>
+                                <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'} onClick={handleViewMore}>
+                                    <Button className="button-view-more" style={{ padding: '10px', color: '#8e4c00' }} endIcon={<EastIcon style={{ color: '#006039' }} />}>
+                                        Xem thêm
+                                    </Button>
+                                </Box>
+                            </Box>
+                        )}
                     </div>
-                </div>
             }
         </div>
 
