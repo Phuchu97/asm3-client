@@ -1,0 +1,38 @@
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    transition: background-color 0.3s, transform 0.3s;
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.bg-pro-list {
+    height: 92px;
+    background-image: url('/src/assets/images/ac.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.list-products {
+    padding: 0 36px;
+    color: black;
+}
+
+.product-item img {
+    max-width: 100%;
+}

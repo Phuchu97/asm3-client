@@ -101,14 +101,14 @@ function NavbarComponent(props) {
 
       <div className="header-user header-right">
         <div className="header-user-item header-right-flex" onClick={moveToCart}>
-          <div className="header-user-item-icon"><i class="fa-solid fa-cart-arrow-down"></i></div>
+          <div className="header-user-item-icon"><i className="fa-solid fa-cart-arrow-down"></i></div>
           <p className="header-user-item-name">Giỏ hàng</p>
           {
             listCart.length > 0 && <div className="cart-number">{listCart.length}</div>
           }
         </div>
         {/* <div className="header-user-item header-right-flex" onClick={moveToHistory}>
-          <div className="header-user-item-icon"><i class="fa-regular fa-circle-user"></i></div>
+          <div className="header-user-item-icon"><i className="fa-regular fa-circle-user"></i></div>
           <p className="header-user-item-name">{username}</p>
         </div>
         <div className="header-user-item " onClick={clearUser}>

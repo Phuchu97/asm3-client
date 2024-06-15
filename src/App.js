@@ -12,6 +12,7 @@ import { getListCart } from './Services/CartService';
 import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ListProductComponent from './Components/Product-list';
 
 function App() {
   const [listCart,setListCart] = useState([]);
@@ -36,8 +37,8 @@ function App() {
           {/* <Route path="/" element={<LoginComponent/>}/> */}
           <Route path="/" element={<HomeComponent/>}>
             <Route path="" element={<HomePageComponent/>}/>
-            <Route path="login" element={<LoginComponent/>}/>
             <Route path="product-detail/:id" element={<ProductDetailComponent/>}/>
+            <Route path="product-list" element={<ListProductComponent/>}/>
             <Route path="checkout" element={<CheckoutComponent/>}/>
             <Route path="history" element={<HistoryComponent/>}/>
             <Route path="view-order/:id" element={<ViewOrderComponent/>}/>

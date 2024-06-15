@@ -4,7 +4,6 @@ import { toast } from 'react-toastify';
 import { getListProductDetail,getListProductRelated } from "../Services/productService";
 import { addToCart } from "../Services/CartService";
 import { ColorRing } from 'react-loader-spinner';
-import { API_URL } from "../Constants/ApiConstant";
 import { CartContext } from "../Contexts/CartContext";
 import Numeral from 'react-numeral';
 import '../css/home.css';

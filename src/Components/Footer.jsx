@@ -61,7 +61,7 @@ function FooterComponent() {
           </Grid>
         </Grid>
       </Grid>
-      <Box className="on-top" onClick={handleOnTop}><i class="fa-solid fa-chevron-up"></i></Box>
+      <Box className="on-top" onClick={handleOnTop}><i className="fa-solid fa-chevron-up"></i></Box>
     </Grid>
   );
 }

@@ -68,7 +68,7 @@ function CategoriesComponent() {
                             <p>PHỤC VỤ TẬN TÂM - CHẤT LƯỢNG HÀNG ĐẦU</p>
                         </div>
                     </div>
-                    <div className="down-animation"><i class="fa-solid fa-angle-down"></i></div>
+                    <div className="down-animation"><i className="fa-solid fa-angle-down"></i></div>
                 </div>
                 <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
                     <h2>SẢN PHẨM VƯỢT TRỘI VỀ CHẤT LƯỢNG</h2>

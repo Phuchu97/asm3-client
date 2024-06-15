@@ -52,7 +52,7 @@ function HistoryComponent() {
                                     <td><Numeral value={obj.total} format={"0,0"}/></td>
                                     <td>{obj.delivery === 0? 'Đang nhập kho vận':'Đang vận chuyển'}</td>
                                     <td>{obj.status === 0? 'Thanh toán khi nhận hàng' : 'Đã thanh toán'}</td>
-                                    <td><div onClick={() => moveToView(obj._id)} className="history-move-view">View<i class="fa-solid fa-right-long"></i></div></td>
+                                    <td><div onClick={() => moveToView(obj._id)} className="history-move-view">View<i className="fa-solid fa-right-long"></i></div></td>
                                 </tr>
                             )
                         })

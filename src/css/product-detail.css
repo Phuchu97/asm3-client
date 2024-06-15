@@ -1,7 +1,7 @@
 .head-floor {
     position: relative;
     height: 10vh;
-    background: url('https://content.rolex.com/dam/homepage/hss/watches/classic-watches/datejust/datejust-41/m126333-0010/homepage-datejust-41-m126333-0010-fallback.jpg?imwidth=1920');
+    background: url('/src/assets/images/ac.jpeg');
     background-repeat: no-repeat;
     background-position: start;
     background-size: cover;

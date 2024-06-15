@@ -10,7 +10,7 @@ import Slider from 'react-slick';
 import EastIcon from '@mui/icons-material/East';
 
 function ProductsComponent() {
-
+    const nagvigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true);
     const [listProducts, setListProducts] = useState([]);
     var settings = {
@@ -62,7 +62,7 @@ function ProductsComponent() {
     };
 
     const handleViewMore = () => {
-
+        nagvigate('/product-list')
     };
 
     useEffect(() => {
