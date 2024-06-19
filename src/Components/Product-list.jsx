@@ -13,11 +13,28 @@ function ListProductComponent() {
     const [isLoading, setIsLoading] = useState(true);
     const [listProducts, setListProducts] = useState([]);
 
-    const [categories, setCategories] = useState({
-        electronics: false,
-        fashion: false,
-        books: false,
-    });
+    const [categories, setCategories] = useState([
+        {
+            id: 1,
+            label: "Dây đai thép",
+            checked: false
+        },
+        {
+            id: 1,
+            label: "Bọ thép",
+            checked: false
+        },
+        {
+            id: 1,
+            label: "Dây đai nhựa",
+            checked: false
+        },
+        {
+            id: 1,
+            label: "Máy đóng đai",
+            checked: false
+        }
+    ]);
 
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
@@ -45,19 +62,19 @@ function ListProductComponent() {
                 <Grid item xs={12} md={2}>
                     <Box className="sidebar">
                         <Typography variant="h6" gutterBottom>
-                            Filter by Category
+                            Danh mục sản phẩm
                         </Typography>
                         <Grid className="d-flex flex-column">
-                            {Object.keys(categories).map((category) => (
+                            {categories.map((category) => (
                                 <FormControlLabel
-                                    key={category}
+                                    key={category.id}
                                     control={
                                         <Checkbox
-                                            checked={categories[category]}
-                                            onChange={() => handleCategoryChange(category)}
+                                            checked={category.checked}
+                                            onChange={() => {}}
                                         />
                                     }
-                                    label={category.charAt(0).toUpperCase() + category.slice(1)}
+                                    label={category.label}
                                 />
                             ))}
                         </Grid>
@@ -67,12 +84,12 @@ function ListProductComponent() {
                     <TextField
                         fullWidth
                         variant="outlined"
-                        placeholder="Search for products..."
+                        placeholder="Nhập tìm kiếm sản phẩm..."
                         value={searchTerm}
                         onChange={handleSearchChange}
                         InputProps={{
                             startAdornment: (
-                                <SearchIcon position="start" />
+                                <SearchIcon position="start" className="mr-2" />
                             ),
                         }}
                     />

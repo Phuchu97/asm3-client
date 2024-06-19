@@ -13,6 +13,7 @@ import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ListProductComponent from './Components/Product-list';
+import AboutUs from './Components/about-us';
 
 function App() {
   const [listCart,setListCart] = useState([]);
@@ -40,6 +41,7 @@ function App() {
             <Route path="product-detail/:id" element={<ProductDetailComponent/>}/>
             <Route path="product-list" element={<ListProductComponent/>}/>
             <Route path="checkout" element={<CheckoutComponent/>}/>
+            <Route path="about-us" element={<AboutUs/>}/>
             <Route path="history" element={<HistoryComponent/>}/>
             <Route path="view-order/:id" element={<ViewOrderComponent/>}/>
           </Route>

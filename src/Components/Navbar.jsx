@@ -8,7 +8,6 @@ import '../css/responsive.css';
 function NavbarComponent(props) {
 
   const { listCart } = useContext(CartContext);
-  const username = localStorage.getItem('username');
   const navigate = useNavigate();
   const [colorTitle, setColorTitle] = useState(true);
   const [switchNav, setSwitchNav] = useState(true);
@@ -77,6 +76,7 @@ function NavbarComponent(props) {
 
   const moveToShop = () => {
     setColorTitle(false)
+    navigate('/about-us');
   };
 
   return (

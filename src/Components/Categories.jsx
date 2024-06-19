@@ -6,9 +6,10 @@ import background from '../assets/images/banner-1.jpg';
 import { Box, Button, Grid } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import { ColorRing } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
 
 function CategoriesComponent() {
-    const [styleBackground, setStyleBackground] = useState(null);
+    const navigate = useNavigate()
     const [isLoading, setIsLoading] = useState(true);
     const [listCategories, setListCategories] = useState([]);
     const [visibleCategories, setVisibleCategories] = useState(3);
@@ -27,7 +28,7 @@ function CategoriesComponent() {
             setIsLoading(false);
         });
     }, []);
-
+    console.log(listCategories);
     const handleViewMore = () => {
         setVisibleCategories((prev) => prev + 3);
     };
@@ -89,7 +90,7 @@ function CategoriesComponent() {
                         {
                             listCategories.length > 0 && listCategories.map((obj, key) => {
                                 return (
-                                    <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
+                                    <div onClick={()=> navigate(`/product-list?category_id=${obj._id}`)} key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
                                         <div className="category-item">
                                             <img src={obj.image} alt="" />
                                         </div>
@@ -103,7 +104,7 @@ function CategoriesComponent() {
                         {
                             listCategories.slice(0, visibleCategories).map((obj, key) => {
                                 return (
-                                    <div key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
+                                    <div onClick={()=> navigate(`/product-list?category_id=${obj._id}`)} key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
                                         <div className="category-item">
                                             <img src={obj.image} alt="" />
                                         </div>

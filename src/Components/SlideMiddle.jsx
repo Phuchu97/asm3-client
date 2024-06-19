@@ -4,9 +4,11 @@ import '../css/slidemiddle.css';
 import EastIcon from '@mui/icons-material/East';
 import { ColorRing } from 'react-loader-spinner';
 import { getListSlideMiddle } from '../Services/SlideMiddle';
+import { useNavigate } from 'react-router-dom';
 
 function SlideMiddleComponent() {
 
+    const navigate = useNavigate()
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -42,7 +44,7 @@ function SlideMiddleComponent() {
                             </Box>
                         </Box>
                         <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'}>
-                            <Button style={{ fontSize: '16px', padding: '10px', color: '#8e4c00' }} endIcon={<EastIcon style={{ color: '#006039' }} />}>
+                            <Button onClick={() => navigate("/about-us")} style={{ fontSize: '16px', padding: '10px', color: '#8e4c00' }} endIcon={<EastIcon style={{ color: '#006039' }} />}>
                                 Tìm hiểu thêm
                             </Button>
                         </Box>
