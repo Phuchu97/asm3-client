@@ -3,7 +3,7 @@
   "name": "Vượng Phát Steel",
   "icons": [
     {
-      "src": "../src/assets/images/logo.png",
+      "src": "./images/logo.png",
       "type": "image/png",
       "sizes": "512x512"
     }
