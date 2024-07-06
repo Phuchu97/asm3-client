@@ -99,7 +99,7 @@ function SlidePartnerComponent() {
                                             Nghiêm ngặt về chất lượng
                                         </Typography>
                                         <Typography variant="body1" color="text.secondary">
-                                            Chúng tôi sử dụng các công nghệ và máy móc hiện đại để kiểm tra chất lượng đầu vào và đầu ra của sản phẩm
+                                        Nhà máy của chúng tôi được trang bị máy móc hiện đại và đội ngũ nhân viên chuyên nghiệp, luôn đảm bảo tiến độ sản xuất và chất lượng sản phẩm. Chúng tôi tự hào là đối tác tin cậy của nhiều doanh nghiệp trong và ngoài nước.
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
@@ -120,8 +120,7 @@ function SlidePartnerComponent() {
                                             Uy tín và trách nhiệm
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                                            species, ranging across all continents except Antarctica
+                                        Chất lượng sản phẩm luôn là ưu tiên hàng đầu của chúng tôi. Với hệ thống quản lý chất lượng nghiêm ngặt, chúng tôi đảm bảo mỗi sản phẩm khi xuất xưởng đều đạt tiêu chuẩn cao nhất. Đội ngũ kỹ thuật viên chuyên nghiệp của chúng tôi luôn sẵn sàng tư vấn và hỗ trợ khách hàng một cách tận tâm.
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
@@ -142,8 +141,7 @@ function SlidePartnerComponent() {
                                             Giá thành tốt nhất
                                         </Typography>
                                         <Typography variant="body2" color="text.secondary">
-                                            Lizards are a widespread group of squamate reptiles, with over 6,000
-                                            species, ranging across all continents except Antarctica
+                                        Chúng tôi hiểu rằng giá cả là yếu tố quan trọng trong quyết định mua hàng, vì vậy chúng tôi luôn nỗ lực để cung cấp các giải pháp tối ưu về giá cả mà không làm giảm chất lượng sản phẩm. Sự hài lòng của khách hàng chính là động lực để chúng tôi tiếp tục hoàn thiện và phát triển.
                                         </Typography>
                                     </CardContent>
                                 </CardActionArea>
@@ -173,7 +171,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://khothepxaydung.com/wp-content/uploads/2021/06/thep-viet-duc.png"
+                                        image={require("../assets/images/hoaphat.jpg")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -183,7 +181,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://vnsteelthanglong.vn/assets/img/LOGO.png"
+                                        image={require("../assets/images/vinapipe.jpg")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -193,7 +191,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://thephkp.com/storage/2022/06/thep-minh-ngoc.png"
+                                        image={require("../assets/images/tisco.png")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -203,7 +201,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://media.gettyimages.com/id/527862796/photo/industrial-worker-in-sheet-metal-component-factory.jpg?s=612x612&w=0&k=20&c=ZLJdQoLA4-jeldih9Hc5Z3nXK5G6VsW_cOi0g0Uw9nU="
+                                        image={require("../assets/images/tuyenquang.jpg")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -213,7 +211,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://media.gettyimages.com/id/527862796/photo/industrial-worker-in-sheet-metal-component-factory.jpg?s=612x612&w=0&k=20&c=ZLJdQoLA4-jeldih9Hc5Z3nXK5G6VsW_cOi0g0Uw9nU="
+                                        image={require("../assets/images/viety.png")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -223,7 +221,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://media.gettyimages.com/id/527862796/photo/industrial-worker-in-sheet-metal-component-factory.jpg?s=612x612&w=0&k=20&c=ZLJdQoLA4-jeldih9Hc5Z3nXK5G6VsW_cOi0g0Uw9nU="
+                                        image={require("../assets/images/vnsteel.png")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>
@@ -233,7 +231,7 @@ function SlidePartnerComponent() {
                                     <CardMedia
                                         component="img"
                                         height="250"
-                                        image="https://media.gettyimages.com/id/527862796/photo/industrial-worker-in-sheet-metal-component-factory.jpg?s=612x612&w=0&k=20&c=ZLJdQoLA4-jeldih9Hc5Z3nXK5G6VsW_cOi0g0Uw9nU="
+                                        image={require("../assets/images/vietsing.png")}
                                         alt="green iguana"
                                     />
                                 </CardActionArea>

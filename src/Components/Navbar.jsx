@@ -1,5 +1,5 @@
-import { useNavigate, Link } from "react-router-dom";
-import { useState, useContext } from 'react';
+import { useNavigate, Link, useMatch } from "react-router-dom";
+import { useState, useContext, useEffect } from 'react';
 import { CartContext } from "../Contexts/CartContext";
 import { Menu } from '@mui/icons-material';
 import '../css/home.css';
@@ -7,8 +7,10 @@ import '../css/responsive.css';
 
 function NavbarComponent(props) {
 
-  const { listCart } = useContext(CartContext);
   const navigate = useNavigate();
+  const { listCart } = useContext(CartContext);
+  const matchIntro = useMatch("/about-us")
+  
   const [colorTitle, setColorTitle] = useState(true);
   const [switchNav, setSwitchNav] = useState(true);
   const [styleHeader, setStyleHeader] = useState({});
@@ -78,7 +80,11 @@ function NavbarComponent(props) {
     setColorTitle(false)
     navigate('/about-us');
   };
-
+  useEffect(() => {
+    if(matchIntro) {
+      setColorTitle(false)
+    }
+  }, [matchIntro])
   return (
     <div
       className={switchNav ? 'header' : 'header not-active-translate'}
@@ -96,7 +102,6 @@ function NavbarComponent(props) {
 
       <div className='header-logo' style={colorLogo}>
         <h3>VUONGPHAT</h3>
-        {/* <img src={require('../assets/images/logo.png')} alt="Image Steel VuongPhat" /> */}
       </div>
 
       <div className="header-user header-right">
@@ -107,13 +112,6 @@ function NavbarComponent(props) {
             listCart.length > 0 && <div className="cart-number">{listCart.length}</div>
           }
         </div>
-        {/* <div className="header-user-item header-right-flex" onClick={moveToHistory}>
-          <div className="header-user-item-icon"><i className="fa-regular fa-circle-user"></i></div>
-          <p className="header-user-item-name">{username}</p>
-        </div>
-        <div className="header-user-item " onClick={clearUser}>
-          <p className="header-user-item-logout">Logout</p>
-        </div> */}
       </div>
     </div>
   );

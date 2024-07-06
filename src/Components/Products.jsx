@@ -115,14 +115,11 @@ function ProductsComponent() {
                                                     </Grid>
                                                 </Link>
                                                 <Grid className="product-content" textAlign={'center'}>
-                                                    {
-                                                        obj.price > 1000 ? <Typography><Numeral value={obj.price} format={"0,0"} /> VND</Typography> :
-                                                            <Link to={"https://zalo.me/0967870722"}>
-                                                                <Button style={{ fontSize: '16px', padding: '6px 10px', color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
-                                                                    Liên hệ
-                                                                </Button>
-                                                            </Link>
-                                                    }
+                                                    <Link to={"https://zalo.me/0967870722"}>
+                                                        <Button style={{ fontSize: '16px', padding: '6px 10px', color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
+                                                            Liên hệ
+                                                        </Button>
+                                                    </Link>
                                                 </Grid>
                                             </Grid>
                                         )

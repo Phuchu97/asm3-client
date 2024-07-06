@@ -1,3 +1,91 @@
 .about-us {
     color: #000000;
 }
+
+.content-1 {
+    font-size: 14px;
+}
+
+.slide-about-item {
+    background: #000;
+}
+
+.about-title {
+    font-size: 36px;
+    font-weight: 700;
+    font-family: 'fangsong';
+}
+
+.about-des-p {
+    font-size: 16px;
+    font-family: 'fangsong';
+}
+
+.slide-about-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.text-slide {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    font-style: normal;
+    z-index: 0;
+    color: #fff;
+    font-weight: 700;
+}
+
+.slide-about .slick-next:before,.slide-about .slick-prev:before {
+    color: #fff;
+    font-size: 48px;
+    scale: none;
+}
+.slide-about .slick-prev {
+    display: block;
+    position: absolute ;
+    color: #fff;
+    top: 45%;
+    z-index: 10;
+    left: 50px;
+}
+.slide-about .slick-next {
+    display: block;
+    position: absolute;
+    color: #fff;
+    top: 45%;
+    z-index: 10;
+    right: 50px;
+}
+.text-slide h2{
+    font-size: 3rem;
+    letter-spacing: 0.5rem;
+}
+
+.text-slide p{
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: 100;
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.about-des {
+    padding: 2rem 0;
+    background-color: aqua;
+}
+@media (max-width: 1039px ){
+    .slide-about .slick-prev, .slide-about .slick-next {
+        display: none !important;
+    }
+}
+
+@media (max-width: 798px ){
+    .text-slide h2 {
+        font-size: 2rem;
+    }
+    .text-slide p {
+        font-size: 1rem;
+    }
+}

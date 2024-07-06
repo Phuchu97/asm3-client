@@ -80,10 +80,6 @@
     display: none;
 }
 
-.view-more-btn {
-
-}
-
 @media (max-width: 576px){
     .pc-tab {
         display: none;

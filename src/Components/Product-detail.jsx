@@ -125,7 +125,7 @@ function ProductDetailComponent(props) {
                 }
                 <Grid className="product-detail-slide">
                   <Slider {...settings} >
-                    <img onMouseMove={handleImg} src={product.image[0]}/>
+                    <img onMouseMove={handleImg} src={product.image[0]} />
                     <img onMouseMove={handleImg} src={product.image[1]} />
                     <img onMouseMove={handleImg} src={product.image[2]} />
                     <img onMouseMove={handleImg} src={product.image[3]} />
@@ -138,7 +138,11 @@ function ProductDetailComponent(props) {
                 product !== null && (
                   <div className="col-lg-6 col-md-6 col-sm-12 product-detail-content-right">
                     <h3 className="product-name">{product.name}</h3>
-                    <h6 className="product-price"><Numeral value={product.price} format={"0,0"} /> VND</h6>
+                    <Link to={"https://zalo.me/0967870722"}>
+                      <Button className="attention-button" style={{ fontSize: '16px', padding: '6px 10px', margin: "16px 0", color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
+                        Liên hệ
+                      </Button>
+                    </Link>
                     <p className="product-description">{product.description_sale}</p>
                     <h3 className="product-category">Loại sản phẩm: <span className="product-category-item">{product.category_product}</span></h3>
                     <div className="product-cart">
@@ -181,9 +185,13 @@ function ProductDetailComponent(props) {
                                 <div className="product-item">
                                   <img src={obj.image[0]} alt="" />
                                 </div>
-                                <div className="product-content">
+                                <div className="product-content" style={{textAlign: 'center'}}>
                                   <h4>{obj.name}</h4>
-                                  <p><Numeral value={obj.price} format={"0,0"} /> VND</p>
+                                  <Link to={"https://zalo.me/0967870722"}>
+                                    <Button className="attention-button" style={{ fontSize: '16px', padding: '6px 10px', margin: "16px 0", color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
+                                      Liên hệ
+                                    </Button>
+                                  </Link>
                                 </div>
                               </div>
                             )

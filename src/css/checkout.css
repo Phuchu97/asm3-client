@@ -6,43 +6,42 @@
     height: 15rem;
     background-color: #f8f9fa;
     display: flex;
-    color: black;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 20rem;
+    justify-content: center;
+    color: black;
+    padding: 0 2rem;
 }
 
 .checkout-header h1 {
-    font-size: 4rem;
-    letter-spacing: 4px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
     opacity: 0.8;
 }
 
 .checkout-header p {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     opacity: 0.8;
 }
 
 .checkout-content {
-    margin: 0 6rem;
+    margin: 0 auto;
     color: black;
 }
 
-.checkout-form {
-    width: 100%;
+.checkout-content-left,
+.checkout-content-right {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
 
-.checkout-content-left-title {
+.checkout-content-left-title,
+.checkout-content-right-content-title {
     letter-spacing: 1px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 2rem 0;
-}
-
-.checkout-label-input {
-    display: block;
-    letter-spacing: 1px;
-    font-size: 1.4rem;
-    opacity: 0.9;
 }
 
 .checkout-form {
@@ -58,7 +57,7 @@
     padding-left: 2rem;
     opacity: 0.8;
     outline: none;
-    font-size: 1.6rem;
+    font-size: 1rem;
 }
 
 .checkout-form input:focus {
@@ -68,89 +67,146 @@
 
 .checkout-submit {
     margin: 3rem 0;
+    text-align: center;
+}
+
+.checkout-submit button {
     background-color: black;
     color: #f8f9fa;
-    font-size: 1.8rem;
+    font-size: 1rem;
     opacity: 0.8;
     padding: 1.6rem 2rem;
     border-radius: 3px;
-    width: 15rem;
-    text-align: center;
+    width: 100%;
+    max-width: 200px;
+    cursor: pointer;
     transition: .2s linear;
 }
 
-.checkout-submit:hover {
-    scale: 1.05;
-    cursor: pointer;
-}
-
-.checkout-content-right {
-    align-self: center;
-}
-
-.checkout-content-right-content {
-    padding: 4rem;
-    background-color: #f8f9fa;
-    align-items: center;
-    border-radius: 5px;
-}
-
-.checkout-content-right-content-title {
-    letter-spacing: 2px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 2rem 0;
-    font-size: 2.5rem;
+.checkout-submit button:hover {
+    transform: scale(1.05);
 }
 
 .order-item {
-    display: flex; 
+    display: flex;
     align-items: center;
     border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
     justify-content: space-between;
     padding: 1rem 0;
 }
 
-.order-item h3{
+.order-item h3 {
     font-weight: 600;
     margin: 0;
     opacity: 0.9;
+    font-size: 1rem;
 }
 
-.order-item p{
+.order-item p {
     margin-bottom: 0;
-    font-size: 1.5rem;
+    font-size: 0.9rem;
 }
 
 .order-total {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
-   
 }
 
-.order-total h3{ 
+.order-total h3 {
     font-weight: 600;
     opacity: 0.9;
 }
 
-.order-total p{
+.order-total p {
     margin-bottom: 0;
     align-self: center;
-    font-size: 1.5rem; 
+    font-size: 0.9rem;
 }
 
 .form-error {
     color: red;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
 }
 
 .delete-cart {
-    font-size: 1.5rem;
+    font-size: 0.9rem;
     background-color: #edafaf;
     border-radius: 50%;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    padding-left: 4px;
-    padding-right: 5px;
+    padding: 4px;
     cursor: pointer;
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 576px) {
+    .checkout-header h1 {
+        font-size: 3rem;
+    }
+
+    .checkout-header p {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout-header-div-title {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .checkout-header {
+        flex-direction: row;
+    }
+
+    .checkout-header h1 {
+        font-size: 3.5rem;
+    }
+
+    .checkout-header p {
+        font-size: 1.6rem;
+    }
+
+    .checkout-content {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .checkout-content-left,
+    .checkout-content-right {
+        flex: 1;
+        margin-bottom: 0;
+    }
+
+    .checkout-content-left-title,
+    .checkout-content-right-content-title {
+        font-size: 2rem;
+    }
+
+    .order-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .order-item p {
+        font-size: 1.2rem;
+    }
+
+    .order-total p {
+        font-size: 1.2rem;
+    }
+
+    .delete-cart {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .checkout-header h1 {
+        font-size: 4rem;
+    }
+
+    .checkout-header p {
+        font-size: 1.8rem;
+    }
 }
