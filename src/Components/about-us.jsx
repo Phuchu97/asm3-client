@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import '../css/aboutUs.css';
 import Slider from 'react-slick';
 import { Grid, Typography, Button, Box } from "@mui/material";
+import FeaturesComponent from './Features';
 const AboutUs = () => {
   var settings = {
     infinite: true,
@@ -34,7 +35,7 @@ const AboutUs = () => {
           <p>SƠ LƯỢC VỀ CHÚNG TÔI</p>
         </div>
       </div>
-      <h2 className="text-center" data-aos="fade-up" style={{ color: "#006039", padding: "80px 0 80px 0", fontSize: '36px', fontWeight: 700, fontFamily: "fangsong" }}>Năng Lực Của Chúng Tôi</h2>
+      <h2 className="text-center" data-aos="fade-up" style={{ padding: "80px 0 80px 0", fontSize: '36px', fontWeight: 700, fontFamily: "fangsong" }}>NĂNG LỰC CỦA CHÚNG TÔI</h2>
       <div className="container" style={{ backgroundColor: "#ffffff" }}>
         <div
           className="row"
@@ -72,41 +73,12 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <Grid className='about-des bg-light'>
-        <div className="container rounded mt-4"  data-aos="fade-up" data-aos-duration="1400">
-          <h2 className="mb-4 text-center about-title">Lịch Sử Hình Thành</h2>
-          <p className="mb-4" data-aos="fade-up" data-aos-duration="1200">
-            Được thành lập với mục tiêu cung cấp các giải pháp thép toàn diện, Công ty TNHH Thép Vượng Phát đã không ngừng phát triển và mở rộng quy mô sản xuất. Từ những ngày đầu tiên, chúng tôi đã luôn chú trọng vào việc đầu tư công nghệ và nâng cao chất lượng sản phẩm, nhờ đó mà trở thành đối tác tin cậy của nhiều doanh nghiệp trong và ngoài nước.
-          </p>
 
-          <h2 className="mb-4 text-center about-title">Sản Phẩm và Dịch Vụ</h2>
-          <p className="mb-4 about-des-p">
-            Chúng tôi chuyên sản xuất và gia công các loại:
-          </p>
-          <ul className="mb-4 about-des-p">
-            <li>Dây đai thép: Sản phẩm chắc chắn, độ bền cao, phù hợp với nhiều loại hàng hóa.</li>
-            <li>Bọ thép: Phụ kiện quan trọng trong việc đóng gói và vận chuyển.</li>
-            <li>Tôn cuộn: Bao gồm tôn mạ kẽm, tôn mạ màu và tôn cán nguội, được sản xuất theo tiêu chuẩn quốc tế, đảm bảo độ bền và tính thẩm mỹ cao.</li>
-          </ul>
-
-          <h2 className="mb-4 text-center about-title">Cam Kết Chất Lượng</h2>
-          <p className="mb-4 about-des-p">
-            Chất lượng sản phẩm luôn là ưu tiên hàng đầu của chúng tôi. Với hệ thống quản lý chất lượng nghiêm ngặt, chúng tôi đảm bảo mỗi sản phẩm khi xuất xưởng đều đạt tiêu chuẩn cao nhất. Đội ngũ kỹ thuật viên chuyên nghiệp của chúng tôi luôn sẵn sàng tư vấn và hỗ trợ khách hàng một cách tận tâm.
-          </p>
-
-          <h2 className="mb-4 text-center about-title">Sứ Mệnh và Tầm Nhìn</h2>
-          <p className="mb-4 about-des-p">
-            Sứ mệnh của chúng tôi là cung cấp các sản phẩm thép chất lượng, góp phần vào sự phát triển bền vững của ngành công nghiệp Việt Nam và thế giới.
-          </p>
-          <p className="mb-4 about-des-p">
-            Tầm nhìn của chúng tôi là trở thành nhà cung cấp thép hàng đầu tại Việt Nam và mở rộng thị trường ra quốc tế, không ngừng đổi mới và phát triển để đáp ứng nhu cầu ngày càng cao của khách hàng.
-          </p>
-        </div>
-      </Grid>
-      <div className="container" style={{ backgroundColor: "#ffffff" }}>
+      <FeaturesComponent />
+      <div className="container" style={{ backgroundColor: "#ffffff" }} data-aos="fade-up" data-aos-duration="1000">
         <div>
-          <h2 className="text-center" data-aos="fade-up" style={{ color: "#006039", padding: "80px 0 80px 0", fontSize: '36px', fontWeight: 700, fontFamily: "fangsong" }}>
-            Sản phẩm chính
+          <h2 className="text-center" style={{ padding: "80px 0 80px 0", fontSize: '36px', fontWeight: 700, fontFamily: "fangsong" }}>
+            SẢN PHẨM CHÍNH
           </h2>
           <Grid container>
             <Grid item md={4} lg={4} sm={6} xs={12} className="product-slide-item" marginBottom={'30px'}>

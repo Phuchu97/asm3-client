@@ -130,7 +130,6 @@ function ProductDetailComponent(props) {
                     <img onMouseMove={handleImg} src={product.image[2]} />
                     <img onMouseMove={handleImg} src={product.image[3]} />
                     <img onMouseMove={handleImg} src={product.image[4]} />
-                    <img onMouseMove={handleImg} src={product.image[5]} />
                   </Slider>
                 </Grid>
               </div>
