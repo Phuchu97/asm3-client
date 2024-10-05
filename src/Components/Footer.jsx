@@ -45,7 +45,7 @@ function FooterComponent() {
               </Box>
 
               <Box display={'flex'} alignItems={'center'} justifyContent={'center'} padding={'1.2rem 0'}>
-                <Typography variant="p">Chi nhánh: Phường Văn La, Quận Hà Đông, TP. Hà Nội</Typography>
+                <Typography style={{ width: '90%' }} variant="p">Chi nhánh: số nhà 61 tổ 10 khu giãn dân, phố Mậu Lương, phường Kiến Hưng, quận Hà Đông, Hà Nội</Typography>
               </Box>
             </Grid>
 

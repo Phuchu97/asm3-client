@@ -91,7 +91,7 @@ const AboutUs = () => {
             </Grid>
             <Grid item md={4} lg={4} sm={6} xs={12} className="product-slide-item" marginBottom={'30px'}>
               <Grid className="product-item">
-                <img src="https://firebasestorage.googleapis.com/v0/b/funix-chat.appspot.com/o/images%2Fbo%20thep%202.png5f3a1aff-23e4-4042-844e-9dc2b5024868?alt=media&token=bc11e39a-eb82-4da6-bcdf-50833b780259" alt="product" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/funix-chat.appspot.com/o/images%2Fsteel-strapping-seal-500x500.webp47029f71-b97b-45af-a0cf-d91b5937ae84?alt=media&token=c8536cc2-f141-4955-a480-7b3a77056bf6" alt="product" />
               </Grid>
               <Grid className="product-content">
                 <Typography variant="h4">Bọ thép</Typography>
