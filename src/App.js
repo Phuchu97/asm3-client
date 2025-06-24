@@ -14,6 +14,8 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ListProductComponent from './Components/Product-list';
 import AboutUs from './Components/about-us';
+import Contact from './Components/Contact';
+import ScrollTopComponent from './Components/Scroll-top';
 
 function App() {
   const [listCart,setListCart] = useState([]);
@@ -44,10 +46,12 @@ function App() {
             <Route path="about-us" element={<AboutUs/>}/>
             <Route path="history" element={<HistoryComponent/>}/>
             <Route path="view-order/:id" element={<ViewOrderComponent/>}/>
+            <Route path="contact" element={<Contact/>}/>
           </Route>
         </Routes>
       </CartContext.Provider>
       <ToastContainer/>
+      <ScrollTopComponent />
     </div>
   );
 }

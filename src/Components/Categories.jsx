@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 import '../css/categories.css';
 import '../css/responsive.css';
-import { getFileSlide, getListCategories } from "../Services/HomeService";
-import background from '../assets/images/banner-1.jpg';
+import { getListCategories } from "../Services/HomeService";
+import backgroundVideo from '../assets/images/banner-3.mp4';
 import { Box, Button, Grid } from '@mui/material';
 import EastIcon from '@mui/icons-material/East';
 import { ColorRing } from 'react-loader-spinner';
@@ -15,14 +16,6 @@ function CategoriesComponent() {
     const [visibleCategories, setVisibleCategories] = useState(3);
 
     useEffect(() => {
-        // getFileSlide((res) => {
-        //     if (res.statusCode === 200) {
-        //         setStyleBackground({});
-        //         setIsLoading(false);
-        //     }
-        // });
-        // Hiện tại ảnh đang để tĩnh, vẫn chưa động thay thế trên admin
-
         getListCategories((res) => {
             setListCategories(res.data);
             setIsLoading(false);
@@ -34,97 +27,45 @@ function CategoriesComponent() {
     };
 
     return (
-        <div>
-            <div className="categories">
-                <div
-                    className="home-header-page"
-                    style={{
-                        backgroundImage: `url(${background})`,
-                        backgroundRepeat: 'no-repeat',
-                        backgroundPosition: 'center',
-                        backgroundSize: 'cover'
-                    }}
-                >
-                    <video
-                        className='home-header-page-video'
-                        autoPlay
-                        loop
-                        muted
-                        poster={require('../assets/images/banner-3.mp4')}
-                        playsInline=""
-                        controlslist="nofullscreen nodownload"
-                        disablepictureinpicture=""
-                        disableremoteplayback=""
-                        preload="metadata"
-                    >
-                        <source
-                            src={require('../assets/images/banner-3.mp4')}
-                            type="video/mp4"
-                        />
-                    </video>
-                    <div className="eewPUi"></div>
-                    <div className="home-page-title">
-                        <div data-aos="fade-up" data-aos-duration="1000">
-                            <h2>VUONGPHATSTEEL</h2>
-                            <p>PHỤC VỤ TẬN TÂM - CHẤT LƯỢNG HÀNG ĐẦU</p>
-                        </div>
-                    </div>
-                    <div className="down-animation"><i className="fa-solid fa-angle-down"></i></div>
+        <div className="categories-industrial">
+            {/* Banner with video background */}
+            <div className="categories-banner homepage-banner-steel">
+                <video autoPlay loop muted playsInline className="banner-video">
+                    <source src={backgroundVideo} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="categories-banner-overlay homepage-banner-steel-overlay"></div>
+                <div className="categories-banner-content homepage-banner-center">
+                    <h1 className="homepage-banner-title">VƯỢNG PHÁT STEEL</h1>
+                    <p className="homepage-banner-slogan">Giải pháp thép công nghiệp hiện đại & bền vững</p>
+                    <button className="categories-banner-btn homepage-banner-btn" onClick={() => navigate('/about-us')}>Khám phá về chúng tôi</button>
                 </div>
-                <div className="categories-title" data-aos="fade-up" data-aos-duration="1000">
-                    <h2>SẢN PHẨM VƯỢT TRỘI VỀ CHẤT LƯỢNG</h2>
-                    <p>CHÚNG TÔI THẾ MẠNH TRONG CÁC LĨNH VỰC</p>
-                </div>
-                {isLoading ? <Grid display={'flex'} justifyContent={'center'}>
-                    <ColorRing
-                        visible={true}
-                        height="80"
-                        width="80"
-                        ariaLabel="blocks-loading"
-                        wrapperStyle={{}}
-                        wrapperClass="blocks-wrapper"
-                        colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
-                    />
-                </Grid> : <Grid>
-                    <div className="category row pc-tab" data-aos="fade-up" data-aos-duration="2000">
-                        {
-                            listCategories.length > 0 && listCategories.map((obj, key) => {
-                                return (
-                                    <div onClick={()=> navigate(`/product-list?category_id=${obj._id}`)} key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
-                                        <div className="category-item">
-                                            <img src={obj.image} alt="" />
-                                        </div>
-                                        <div className="category-item-title">{obj.name}</div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    <div className="category row mobile" data-aos="fade-up" data-aos-duration="2000">
-                        {
-                            listCategories.slice(0, visibleCategories).map((obj, key) => {
-                                return (
-                                    <div onClick={()=> navigate(`/product-list?category_id=${obj._id}`)} key={key} className="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 category-child">
-                                        <div className="category-item">
-                                            <img src={obj.image} alt="" />
-                                        </div>
-                                        <div className="category-item-title">{obj.name}</div>
-                                    </div>
-                                )
-                            })
-                        }
-                    </div>
-                    {listCategories.length > visibleCategories && (
-                        <Box className='mobile'>
-                            <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'} onClick={handleViewMore}>
-                                <Button style={{ fontSize: '12px', padding: '10px', color: '#006039' }}>
-                                    Xem thêm
-                                </Button>
-                            </Box>
-                        </Box>
-                    )}
-                </Grid>}
             </div>
+            {/* Danh mục sản phẩm */}
+            <motion.div className="categories-section" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+                <h2 className="categories-title">Danh mục sản phẩm</h2>
+                <div className="categories-grid categories-grid-steel">
+                    {isLoading ? (
+                        <div className="categories-loading">Đang tải...</div>
+                    ) : (
+                        listCategories.length > 0 ? listCategories.map((obj, key) => (
+                            <motion.div
+                                className="category-card category-card-steel"
+                                key={key}
+                                whileHover={{ scale: 1.09, boxShadow: '0 16px 48px #1576a999' }}
+                                onClick={() => navigate(`/product-list?category_id=${obj._id}`)}
+                            >
+                                <div className="category-card-img-wrap category-card-img-steel">
+                                    <img src={obj.image} alt={obj.name} className="category-card-img-large category-card-img-steel-img" />
+                                    <div className="category-card-icon-overlay"><i className="fa-solid fa-industry"></i></div>
+                                </div>
+                                <div className="category-card-title-large category-card-title-steel">{obj.name}</div>
+                                <div className="category-card-caption">Chất lượng - Bền vững - Hiện đại</div>
+                            </motion.div>
+                        )) : <div className="categories-empty">Chưa có danh mục sản phẩm.</div>
+                    )}
+                </div>
+            </motion.div>
         </div>
     );
 }

@@ -1,119 +1,55 @@
-import { useNavigate, Link, useMatch } from "react-router-dom";
-import { useState, useContext, useEffect } from 'react';
-import { CartContext } from "../Contexts/CartContext";
-import { Menu } from '@mui/icons-material';
-import '../css/home.css';
-import '../css/responsive.css';
+import { Link, useLocation } from "react-router-dom";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../css/navbar.css';
+import logo from '../assets/images/logo.svg';
 
-function NavbarComponent(props) {
+function NavbarComponent() {
+  const location = useLocation();
+  const [open, setOpen] = useState(false);
 
-  const navigate = useNavigate();
-  const { listCart } = useContext(CartContext);
-  const matchIntro = useMatch("/about-us")
-  
-  const [colorTitle, setColorTitle] = useState(true);
-  const [switchNav, setSwitchNav] = useState(true);
-  const [styleHeader, setStyleHeader] = useState({});
-  const [colorLogo, setColorLogo] = useState({});
-  const [numberScrollY, setNumberScrollY] = useState(0);
-
-  const handleScrollHeader = () => {
-    if (window.scrollY > numberScrollY) {
-      setSwitchNav(false);
-      setNumberScrollY(window.scrollY);
-    } else {
-      setNumberScrollY(window.scrollY);
-      setSwitchNav(true);
-      setStyleHeader({
-        backgroundColor: '#fff',
-        color: 'black',
-        boxShadow: 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px'
-      })
-      setColorLogo({
-        color: '#006039'
-      })
-    }
-    if (window.scrollY === 0) {
-      setStyleHeader({ background: 'none' })
-      setColorLogo({})
-    }
-  };
-
-
-  window.addEventListener('scroll', handleScrollHeader);
-
-  const clearUser = () => {
-    localStorage.clear();
-    navigate('/');
-  };
-
-  const moveToCart = () => {
-    navigate('/checkout');
-  };
-
-  const moveToHistory = () => {
-    navigate('/history');
-  };
-
-  const handleMouseMoveHeader = () => {
-    setColorLogo({ color: '#006039' })
-    setStyleHeader({
-      backgroundColor: '#fff',
-      color: 'black',
-      boxShadow: 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px',
-    })
-  }
-
-  const handleMouseOutHeader = () => {
-    if (window.scrollY < 80) {
-      setStyleHeader({})
-      setColorLogo({})
-    }
-  }
-
-  const backHome = () => {
-    setColorTitle(true);
-    navigate('/');
-  };
-
-  const moveToShop = () => {
-    setColorTitle(false)
-    navigate('/about-us');
-  };
-  useEffect(() => {
-    if(matchIntro) {
-      setColorTitle(false)
-    }
-  }, [matchIntro])
   return (
-    <div
-      className={switchNav ? 'header' : 'header not-active-translate'}
-      style={styleHeader}
-      onMouseMove={handleMouseMoveHeader}
-      onMouseOut={handleMouseOutHeader}
-    >
-      <div className="header-name header-left header-left-responsive">
-        <h5 className="header-name-item mr-4" onClick={backHome} style={{ color: colorTitle ? '#f2da98' : '' }}>Trang Chủ</h5>
-        <h5 className="header-name-item" onClick={moveToShop} style={{ color: colorTitle ? '' : '#f2da98' }}>Giới thiệu</h5>
+    <nav className="navbar-industrial">
+      <div className="navbar-logo">
+        <Link to="/">
+          <img src={logo} alt="Logo" className="navbar-logo-img" />
+        </Link>
       </div>
-      <div className="mobile-sm">
-        <Menu />
+      <ul className="navbar-menu">
+        <li className={location.pathname === '/' ? 'active' : ''}><Link to="/">Trang chủ</Link></li>
+        <li className={location.pathname.startsWith('/product') ? 'active' : ''}><Link to="/product-list">Sản phẩm</Link></li>
+        <li className={location.pathname === '/about-us' ? 'active' : ''}><Link to="/about-us">Giới thiệu</Link></li>
+        <li className={location.pathname === '/contact' ? 'active' : ''}><Link to="/contact">Liên hệ</Link></li>
+      </ul>
+      <div className="navbar-cta">
+        <Link to="/contact" className="navbar-contact-btn">Liên hệ ngay</Link>
       </div>
-
-      <div className='header-logo' style={colorLogo}>
-        <h3>VUONGPHAT</h3>
+      {/* Hamburger icon for mobile */}
+      <div className="navbar-hamburger" onClick={() => setOpen(true)}>
+        <span></span><span></span><span></span>
       </div>
-
-      <div className="header-user header-right">
-        <div className="header-user-item header-right-flex" onClick={moveToCart}>
-          <div className="header-user-item-icon"><i className="fa-solid fa-cart-arrow-down"></i></div>
-          <p className="header-user-item-name">Giỏ hàng</p>
-          {
-            listCart.length > 0 && <div className="cart-number">{listCart.length}</div>
-          }
-        </div>
-      </div>
-    </div>
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {open && (
+          <motion.div className="navbar-mobile-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+            <motion.div className="navbar-mobile-menu" initial={{ x: 300 }} animate={{ x: 0 }} exit={{ x: 300 }} transition={{ type: 'spring', stiffness: 300, damping: 30 }}>
+              <div className="navbar-mobile-header">
+                <img src={logo} alt="Logo" className="navbar-logo-img" />
+                <button className="navbar-mobile-close" onClick={() => setOpen(false)}>&times;</button>
+              </div>
+              <ul>
+                <li className={location.pathname === '/' ? 'active' : ''} onClick={() => setOpen(false)}><Link to="/">Trang chủ</Link></li>
+                <li className={location.pathname.startsWith('/product') ? 'active' : ''} onClick={() => setOpen(false)}><Link to="/product-list">Sản phẩm</Link></li>
+                <li className={location.pathname === '/about-us' ? 'active' : ''} onClick={() => setOpen(false)}><Link to="/about-us">Giới thiệu</Link></li>
+                <li className={location.pathname === '/contact' ? 'active' : ''} onClick={() => setOpen(false)}><Link to="/contact">Liên hệ</Link></li>
+              </ul>
+              <Link to="/contact" className="navbar-contact-btn mobile" onClick={() => setOpen(false)}>Liên hệ ngay</Link>
+            </motion.div>
+            <div className="navbar-mobile-bg" onClick={() => setOpen(false)}></div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </nav>
   );
 }
 

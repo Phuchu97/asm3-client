@@ -89,3 +89,338 @@
         font-size: 1rem;
     }
 }
+
+.aboutus-industrial {
+  width: 100%;
+  min-height: 80vh;
+  background: #f7fafd;
+  padding: 0 0 32px 0;
+}
+
+.aboutus-banner {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.aboutus-banner-slider {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.aboutus-banner-img {
+  width: 100vw;
+  height: 400px;
+  object-fit: cover;
+  opacity: 0.7;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  animation: aboutusBannerFade 12s infinite alternate;
+}
+
+@keyframes aboutusBannerFade {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.aboutus-banner-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(90deg, #1576a9 60%, #0d3c5e 100%);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.aboutus-banner-content {
+  position: relative;
+  z-index: 3;
+  color: #fff;
+  text-align: center;
+  background: none;
+  padding: 24px 32px;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.aboutus-banner-content h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 2px 12px #0d3c5e99, 0 1px 0 #1576a9;
+}
+
+.aboutus-banner-content p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: #ffe082;
+  text-shadow: 0 2px 8px #0d3c5e99;
+}
+
+.aboutus-section {
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #1576a91a;
+  padding: 32px 24px 24px 24px;
+}
+
+.aboutus-section-content {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.aboutus-section-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.aboutus-section-text {
+  flex: 1 1 340px;
+  color: #1576a9;
+}
+
+.aboutus-section-text h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.aboutus-section-text p {
+  font-size: 1.05rem;
+  color: #222;
+}
+
+.aboutus-section-img {
+  flex: 1 1 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutus-section-img img {
+  width: 100%;
+  max-width: 380px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #1576a91a;
+}
+
+.aboutus-products {
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #1576a91a;
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+}
+
+.aboutus-products h2 {
+  color: #1576a9;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.aboutus-products-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutus-product-card {
+  background: #f7fafd;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #1576a91a;
+  padding: 18px 12px 12px 12px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.aboutus-product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.aboutus-product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1576a9;
+  text-align: center;
+}
+
+.aboutus-products-list .aboutus-product-card.highlight {
+  background: #fff;
+  box-shadow: 0 4px 24px #1576a933;
+  border: 2px solid #1576a9;
+  width: 260px;
+  min-height: 220px;
+  margin: 0 12px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.aboutus-products-list .aboutus-product-card.highlight img {
+  width: 140px;
+  height: 140px;
+}
+.aboutus-products-list .aboutus-product-card.highlight .aboutus-product-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1576a9;
+  margin-top: 12px;
+}
+
+.aboutus-features {
+  max-width: 1100px;
+  margin: 0 auto 32px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #1576a91a;
+  padding: 32px 24px 24px 24px;
+  text-align: center;
+}
+.aboutus-features-title {
+  color: #1576a9;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+}
+.aboutus-features-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.aboutus-feature-card {
+  background: #f7fafd;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #1576a91a;
+  padding: 24px 16px 18px 16px;
+  width: 220px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.aboutus-feature-icon {
+  font-size: 2.8rem;
+  color: #1576a9;
+  margin-bottom: 16px;
+  transition: color 0.2s;
+}
+.aboutus-feature-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #0d3c5e;
+}
+.aboutus-feature-desc {
+  font-size: 1rem;
+  color: #444;
+}
+
+@media (max-width: 900px) {
+  .aboutus-banner, .aboutus-banner-img {
+    height: 180px;
+  }
+  .aboutus-section, .aboutus-products {
+    padding: 16px 8px 12px 8px;
+  }
+  .aboutus-section-img img {
+    height: 120px;
+  }
+  .aboutus-products-list {
+    gap: 12px;
+  }
+  .aboutus-products-list .aboutus-product-card.highlight {
+    width: 160px;
+    min-height: 120px;
+  }
+  .aboutus-products-list .aboutus-product-card.highlight img {
+    width: 80px;
+    height: 80px;
+  }
+  .aboutus-features-list {
+    gap: 12px;
+  }
+  .aboutus-feature-card {
+    width: 120px;
+    min-height: 120px;
+    padding: 8px 2px 6px 2px;
+  }
+  .aboutus-feature-icon {
+    font-size: 1.5rem;
+  }
+  .aboutus-banner-content h1 {
+    font-size: 1.3rem;
+  }
+  .aboutus-banner-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutus-banner, .aboutus-banner-img {
+    height: 100px;
+  }
+  .aboutus-banner-content h1 {
+    font-size: 1rem;
+  }
+  .aboutus-section-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .aboutus-section-img img {
+    height: 60px;
+  }
+  .aboutus-products-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .aboutus-products-list .aboutus-product-card.highlight {
+    width: 100%;
+    min-width: 0;
+    padding: 6px 1px 4px 1px;
+  }
+  .aboutus-features-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .aboutus-feature-card {
+    width: 100%;
+    min-width: 0;
+    padding: 6px 1px 4px 1px;
+  }
+}

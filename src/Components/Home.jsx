@@ -8,7 +8,7 @@ function HomeComponent() {
   return (
     <div className="home">
       <NavbarComponent/>
-      <div className="is-home-child">
+      <div className="is-home-child" style={{ marginTop: '66px' }}>
         <Outlet/>
       </div>
       <FooterComponent/>

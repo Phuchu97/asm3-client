@@ -1,78 +1,83 @@
 import { useEffect, useState } from 'react';
-import { Grid, Box, Typography, Button } from '@mui/material'
 import '../css/slidemiddle.css';
-import EastIcon from '@mui/icons-material/East';
-import { ColorRing } from 'react-loader-spinner';
 import { getListSlideMiddle } from '../Services/SlideMiddle';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 function SlideMiddleComponent() {
-
-    const navigate = useNavigate()
-    const [data, setData] = useState([]);
+    const navigate = useNavigate();
+    const [data, setData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        getListSlideMiddle((rs) => {
-            console.log(rs);
-            if(rs.statusCode === 200) {
-                setData(rs.data);
+        const timer = setTimeout(() => {
+            getListSlideMiddle((rs) => {
+                if (rs && rs.statusCode === 200 && rs.data && rs.data.length > 0) {
+                    setData(rs.data[0]);
+                }
                 setIsLoading(false);
-            }
-        })
+            });
+        }, 500); // Small delay to prevent flash of loading
+        return () => clearTimeout(timer);
     }, []);
 
-    return (
-        <Grid>
-            {isLoading? <Grid height={700} display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                <ColorRing
-                    visible={true}
-                    height="80"
-                    width="80"
-                    ariaLabel="blocks-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="blocks-wrapper"
-                    colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
-                />
-            </Grid> : <Grid container className='slide-middle'>
-                <Grid item xs={12} sm={12} md={12} lg={6} className="slide-middle-content-left" display={'flex'} alignItems={'center'} justifyContent={'center'}>
-                    <Box className="slide-middle-content-text">
-                        <Box data-aos="fade-up" data-aos-duration="1000">
-                            <Typography variant='h2'>{data[0].name}</Typography>
-                            <Box padding={'0 1.4rem'} style={{ textAlign: 'justify' }}>
-                                <Typography variant='p' >{data[0].description}</Typography>
-                            </Box>
-                        </Box>
-                        <Box display={'flex'} justifyContent={'center'} paddingTop={'4rem'}>
-                            <Button onClick={() => navigate("/about-us")} style={{ fontSize: '16px', padding: '10px', color: '#8e4c00' }} endIcon={<EastIcon style={{ color: '#006039' }} />}>
-                                Tìm hiểu thêm
-                            </Button>
-                        </Box>
-                    </Box>
-                </Grid>
+    const textVariants = {
+        offscreen: { opacity: 0, x: -50 },
+        onscreen: {
+            opacity: 1,
+            x: 0,
+            transition: { type: "spring", stiffness: 100, duration: 0.8 }
+        }
+    };
 
-                <Grid item xs={12} sm={12} md={12} lg={6} className="slide-middle-content-right" data-aos="zoom-in-up" data-aos-duration="1000">
-                    <Grid container>
-                        <Grid item xs={12} sm={12} md={12} lg={12} display={'flex'} justifyContent={'center'}>
-                            <Box className='hexagon-container hexagon-first' >
-                                <img src={data[0].image[0]} alt="Image Steel VuongPhat" />
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6} sm={6} md={6} lg={6} display={'flex'} justifyContent={'center'}>
-                            <Box className='hexagon-container hexagon-second'>
-                                <img src={data[0].image[1]} alt="Image Steel VuongPhat" />
-                            </Box>
-                        </Grid>
-                        <Grid item xs={6} sm={6} md={6} lg={6} display={'flex'} justifyContent={'center'}>
-                            <Box className='hexagon-container hexagon-second'>
-                                <img src={data[0].image[2]} alt="Image Steel VuongPhat" />
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            </Grid>
-            }
-        </Grid>
+    const imageVariants = {
+        offscreen: { opacity: 0, scale: 0.9 },
+        onscreen: {
+            opacity: 1,
+            scale: 1,
+            transition: { type: "spring", stiffness: 100, duration: 0.8 }
+        }
+    };
+
+    if (isLoading) {
+        return <div className="slide-middle-loading-placeholder" />;
+    }
+
+    if (!data || !data.image || data.image.length < 3) {
+        return null; // Don't render if data is missing or doesn't have 3 images
+    }
+
+    return (
+        <section className="sm-section">
+            <div className="sm-container">
+                <motion.div
+                    className="sm-content-wrapper"
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={textVariants}
+                >
+                    <h2 className="sm-title">{data.name}</h2>
+                    <p className="sm-description">{data.description}</p>
+                    <button onClick={() => navigate("/about-us")} className="sm-cta-button">
+                        Tìm Hiểu Thêm
+                    </button>
+                </motion.div>
+                <motion.div
+                    className="sm-image-wrapper"
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    viewport={{ once: true, amount: 0.5 }}
+                    variants={imageVariants}
+                >
+                    <div className="sm-gallery">
+                        <img src={data.image[0]} alt="Steel product 1" className="sm-gallery-image-1" />
+                        <img src={data.image[1]} alt="Steel product 2" className="sm-gallery-image-2" />
+                        <img src={data.image[2]} alt="Steel product 3" className="sm-gallery-image-3" />
+                    </div>
+                </motion.div>
+            </div>
+        </section>
     );
 }
 

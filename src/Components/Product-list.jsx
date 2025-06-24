@@ -3,50 +3,14 @@ import { useEffect, useState } from 'react';
 import { getListProducts } from "../Services/productService";
 import { ColorRing } from 'react-loader-spinner';
 import '../css/productListPage.css';
+import { motion } from 'framer-motion';
 import Numeral from 'react-numeral';
-import { Container, Grid, Box, TextField, Checkbox, FormControlLabel, Card, CardContent, CardActions, Button, Typography } from '@mui/material';
-import SearchIcon from '@mui/icons-material/Search';
 
 function ListProductComponent() {
-    const nagvigate = useNavigate()
+    const navigate = useNavigate();
     const [searchTerm, setSearchTerm] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const [listProducts, setListProducts] = useState([]);
-
-    const [categories, setCategories] = useState([
-        {
-            id: 1,
-            label: "Dây đai thép",
-            checked: false
-        },
-        {
-            id: 1,
-            label: "Bọ thép",
-            checked: false
-        },
-        {
-            id: 1,
-            label: "Dây đai nhựa",
-            checked: false
-        },
-        {
-            id: 1,
-            label: "Máy đóng đai",
-            checked: false
-        }
-    ]);
-
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const handleCategoryChange = (category) => {
-        setCategories({ ...categories, [category]: !categories[category] });
-    };
-
-    const handleViewMore = () => {
-        nagvigate('/product-list')
-    };
 
     useEffect(() => {
         getListProducts((res) => {
@@ -55,94 +19,73 @@ function ListProductComponent() {
         });
     }, []);
 
+    const filteredProducts = listProducts.filter(p =>
+        p.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+
     return (
-        <Container maxWidth="full" className="p-0 ">
-            <Grid className="bg-pro-list"></Grid>
-            <Grid container spacing={4} className="mt-4 list-products">
-                <Grid item xs={12} md={2}>
-                    <Box className="sidebar">
-                        <Typography variant="h6" gutterBottom>
-                            Danh mục sản phẩm
-                        </Typography>
-                        <Grid className="d-flex flex-column">
-                            {categories.map((category) => (
-                                <FormControlLabel
-                                    key={category.id}
-                                    control={
-                                        <Checkbox
-                                            checked={category.checked}
-                                            onChange={() => {}}
-                                        />
-                                    }
-                                    label={category.label}
-                                />
-                            ))}
-                        </Grid>
-                    </Box>
-                </Grid>
-                <Grid item xs={12} md={10}>
-                    <TextField
-                        fullWidth
-                        variant="outlined"
-                        placeholder="Nhập tìm kiếm sản phẩm..."
-                        value={searchTerm}
-                        onChange={handleSearchChange}
-                        InputProps={{
-                            startAdornment: (
-                                <SearchIcon position="start" className="mr-2" />
-                            ),
-                        }}
+        <div className="product-list-industrial">
+            <motion.div className="product-list-header"
+                initial={{ opacity: 0, y: -40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.7 }}
+            >
+                <h1>Sản phẩm</h1>
+                <p>Thép cuộn, dây đai thép, bọ thép đóng gói chất lượng cao</p>
+                <input
+                    className="product-list-search"
+                    type="text"
+                    placeholder="Tìm kiếm sản phẩm..."
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                />
+            </motion.div>
+            {isLoading ? (
+                <div className="product-list-loading">
+                    <ColorRing
+                        visible={true}
+                        height="80"
+                        width="80"
+                        ariaLabel="blocks-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="blocks-wrapper"
+                        colors={['#1576a9', '#0d3c5e', '#b0c4d9', '#d2e3f7', '#e0eaf6']}
                     />
-                    {
-                        isLoading ? <div className={isLoading ? 'active' : 'not-active'}>
-                            <Grid display={'flex'} justifyContent={'center'}>
-                                <ColorRing
-                                    visible={true}
-                                    height="80"
-                                    width="80"
-                                    ariaLabel="blocks-loading"
-                                    wrapperStyle={{}}
-                                    wrapperClass="blocks-wrapper"
-                                    colors={['#f0d29c', '#c5a568', '#ccb286', '#d2b789', '#afa999']}
-                                />
-                            </Grid>
-                        </div> :
-                            <div>
-                                <div data-aos="fade-up" data-aos-duration="1000">
-                                    <Grid container padding={0} spacing={2} className="mt-4">
-                                        {
-                                            listProducts.length > 0 && listProducts.map(obj => {
-                                                return (
-                                                    <Grid item md={4} lg={3} sm={6} xs={12} className="product-slide-item" marginBottom={'30px'}>
-                                                        <Link to={`/product-detail/${obj._id}`} style={{ textDecoration: 'none' }}>
-                                                            <Grid className="product-item">
-                                                                <img src={obj.image[0]} alt="product" />
-                                                            </Grid>
-                                                            <Grid className="product-content">
-                                                                <Typography variant="h4">{obj.name}</Typography>
-                                                            </Grid>
-                                                        </Link>
-                                                        <Grid className="product-content" textAlign={'center'}>
-                                                            {
-                                                                obj.price > 1000 ? <Typography><Numeral value={obj.price} format={"0,0"} /> VND</Typography> :
-                                                                    <Link to={"https://zalo.me/0967870722"}>
-                                                                        <Button style={{ fontSize: '16px', padding: '6px 10px', color: '#bea662', backgroundColor: 'rgb(28 103 72)' }}>
-                                                                            Liên hệ
-                                                                        </Button>
-                                                                    </Link>
-                                                            }
-                                                        </Grid>
-                                                    </Grid>
-                                                )
-                                            })
-                                        }
-                                    </Grid>
-                                </div>
+                </div>
+            ) : (
+                <motion.div className="product-list-grid"
+                    initial="hidden"
+                    animate="visible"
+                    variants={{
+                        hidden: { opacity: 0, y: 40 },
+                        visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.08 } }
+                    }}
+                >
+                    {filteredProducts.length > 0 ? filteredProducts.map(obj => (
+                        <motion.div className="product-list-card" key={obj._id}
+                            variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
+                            whileHover={{ scale: 1.04, boxShadow: '0 8px 32px #1576a955' }}
+                        >
+                            <Link to={`/product-detail/${obj._id}`} className="product-list-link">
+                                <img src={obj.image[0]} alt={obj.name} className="product-list-img" />
+                                <div className="product-list-title">{obj.name}</div>
+                            </Link>
+                            <div className="product-list-price">
+                                {obj.price > 1000 ? (
+                                    <span><Numeral value={obj.price} format={"0,0"} /> VND</span>
+                                ) : (
+                                    <Link to="https://zalo.me/0967870722" target="_blank" rel="noopener noreferrer">
+                                        <button className="product-list-contact-btn">Liên hệ</button>
+                                    </Link>
+                                )}
                             </div>
-                    }
-                </Grid>
-            </Grid>
-        </Container>
+                        </motion.div>
+                    )) : (
+                        <div className="product-list-empty">Không tìm thấy sản phẩm phù hợp.</div>
+                    )}
+                </motion.div>
+            )}
+        </div>
     );
 }
 

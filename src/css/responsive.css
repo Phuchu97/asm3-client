@@ -29,3 +29,40 @@
         font-size: 1.4rem;
     }
 }
+
+/* Responsive cho Categories mới */
+@media (max-width: 1200px) {
+  .categories-section {
+    max-width: 1000px;
+  }
+}
+@media (max-width: 900px) {
+  .categories-section {
+    max-width: 700px;
+  }
+  .categories-grid {
+    gap: 1.2rem 1rem;
+  }
+}
+@media (max-width: 600px) {
+  .categories-section {
+    max-width: 98vw;
+    margin-top: 20px;
+    padding: 0.5rem 0.2rem 1.2rem 0.2rem;
+  }
+  .categories-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 0.5rem;
+  }
+  .categories-banner-content {
+    padding: 0 0.2rem;
+  }
+}
+@media (max-width: 400px) {
+  .categories-grid {
+    grid-template-columns: 1fr;
+  }
+  .categories-banner-content h1 {
+    font-size: 1rem;
+  }
+}

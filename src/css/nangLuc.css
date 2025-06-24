@@ -1,0 +1,98 @@
+.capabilities-section {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+.capabilities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.capabilities-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.capabilities-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1576a9;
+    margin-bottom: 0.5rem;
+}
+
+.capabilities-subtitle {
+    font-size: 1.2rem;
+    color: #5a6473;
+}
+
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+}
+
+.capability-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.capability-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.12);
+}
+
+.capability-card-image-wrapper {
+    height: 220px;
+    overflow: hidden;
+}
+
+.capability-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.capability-card:hover .capability-card-image {
+    transform: scale(1.05);
+}
+
+.capability-card-content {
+    padding: 1.5rem 1.8rem;
+}
+
+.capability-card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1576a9;
+    margin-bottom: 0.75rem;
+}
+
+.capability-card-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #5a6473;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .capabilities-section {
+        padding: 4rem 1rem;
+    }
+    .capabilities-title {
+        font-size: 2.2rem;
+    }
+    .capability-card-content {
+        padding: 1.5rem;
+    }
+} 
